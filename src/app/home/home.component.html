@@ -1,0 +1,52 @@
+<!-- Hero Area Start -->
+<div id="hero-area" class="hero-area section d-none d-lg-block">
+    <!-- Hero Slider Start -->
+    <div class="hero-slider">
+     <ng-container *ngIf="homeArray as slides">
+     <!-- Single Hero Item -->
+        <div *ngFor="let slide of slides" class="hero-item ">
+        <!-- Hero Slider Image -->
+        <img src="{{slide.imageDesktop}}" loading="lazy" alt="Welcome to our Soccer Club">
+         
+        <div class="container">
+            <div class="row">
+            <!-- Hero Slider Content -->
+            <div class="hero-content col-lg-10 col-12">
+                <h1><span>{{slide.title}}</span></h1>
+                <p [innerHTML]="slide.message"></p>
+                <p><a href="{{slide.link}}" class="{{slide.class}}">{{slide.clickMore}}</a></p>
+            </div>
+            </div>
+        </div>
+        </div>
+     </ng-container>
+</div>
+</div>
+
+
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area home section  d-md-block d-lg-none">
+     <!-- Hero Slider Start -->
+     <div class="hero-slider">
+      <ng-container *ngIf="homeArray as slides">
+      <!-- Single Hero Item -->
+         <div *ngFor="let slide of slides" class="hero-item ">
+         <!-- Hero Slider Image -->
+         <img src="{{slide.imageDesktop}}" loading="lazy" alt="Welcome to our Soccer Club">
+
+         <div class="container">
+             <div class="row">
+             <!-- Hero Slider Content -->
+             <div class="hero-content col-lg-10 col-12">
+                 <h1><span>{{slide.title}}</span></h1>
+                 <p>{{slide.message}}</p>
+                 <p><a href="{{slide.link}}" class="{{slide.class}}">{{slide.clickMore}}</a></p>
+             </div>
+             </div>
+         </div>
+         </div>
+      </ng-container>
+ </div>
+</div>
+  <!-- Page Banner Area End -->
+  

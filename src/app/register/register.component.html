@@ -1,0 +1,48 @@
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area section ddd" style="background-image: url({{golfCoverImage}})">
+    <div class="container">
+      <div class="row">
+        <div class="page-banner-title text-center col-12">
+          <h2>tournament registration</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Banner Area End -->
+  
+  <div id="contact-area" class="contact-area section pb-60 pt-60">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-7 col-12 mb-30">
+          <div class="contact-form">
+            <div class="form">
+              <h4>Register here</h4>
+              <form [formGroup]="contactForm">
+                <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
+                <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
+                <input type="text" name="address" placeholder="Address" [formControlName]="'address'">
+                <input type="text" name="city" placeholder="City" [formControlName]="'city'">
+                <input type="text" name="province" placeholder="Province" [formControlName]="'province'">
+
+                <input type="text" name="address" placeholder="Address" [formControlName]="'address'">
+                <input type="text" name="hom" placeholder="Address" [formControlName]="'address'">
+                <input type="text" name="home_phone" placeholder="Home Phone" [formControlName]="'home_phone'">
+                <input type="text" name="cell_phone" placeholder="Cell Phone" [formControlName]="'cell_phone'">
+                <input type="text" name="postal_code" placeholder="Postal Code" [formControlName]="'postal_code'">
+                <textarea name="body" placeholder="Body" [formControlName]="'body'"></textarea>
+                <button (click)="submitToContactUs()" class="submit">Send</button>
+              </form>
+            </div>
+          </div>
+          <div class="success hide">
+            <h4>You have successfully sent the message</h4>
+          </div>
+          <div class="fail hide">
+            <h4>An error occurred. Submission was not sent. Please try again later</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Area End -->
+  

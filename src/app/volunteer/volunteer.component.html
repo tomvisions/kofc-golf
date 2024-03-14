@@ -1,0 +1,76 @@
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area section" style="background-image: url({{volunteerCoverImage}})">
+    <div class="container">
+      <div class="row">
+        <div class="page-banner-title text-center col-12">
+          <h2>Join our Volunteers</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Banner Area End -->
+  
+  <!-- About Area Start -->
+  <div id="about-area" class="about-area section pb-60 pt-60">
+    <div class="container">
+      <div class="row flex-column flex-lg-row-reverse">
+        <!-- About Image -->
+        <div class="about-image col-lg-5 col-12">
+          <img src="{{volunteerSideImage}}" alt="About MamboleFC">
+        </div>
+        <!-- About Content -->
+        <div class="about-content about-content-2 col-lg-7 col-12">
+
+            <h1>Volunteers Needed</h1>
+            <p>
+            Come join us in making this tournament a successful fundraiser for the Royal Ottawa Foundation for Mental Health, Youville Centre, the Shepherds of Good Hope - Hope Living Facility and Knights of Columbus Charities - Coats for Kids Program and Food for Families Program.
+             </p>
+            <h1>Why</h1>
+            <p>
+            Volunteers are need to assist at our golf registration table, selling Raffle Board tickets and running our Holes-in-One and Skills Contest holes.  
+            </p>
+            <p>        
+            Our volunteers also help run the draw for the Raffle Board.
+            </p>
+            <h1>When and Where</h1>  
+            <p>
+            Volunteers should arrive by 11:00 a.m. at the Loch March Golf & Country Club, 1755 Old Carp Rd. 
+            </p>
+            <p>
+            More information on what to wear and the schedule for the day will be provided to all volunteers before the day of the tournament, Tuesday, May 23rd, 2023.
+             </p>
+             
+            
+            <h1>To Volunteer</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-7 col-12 mb-30">
+          <div class="contact-form">
+            <div class="form">
+              <h4>Volunteer Form</h4>
+              <form [formGroup]="volunteerForm">
+
+                <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
+                <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
+                <input type="text" name="phone" placeholder="Phone" [formControlName]="'phone'">
+
+                <button (click)="submitForVolunteer()" class="submit">Send</button>
+              </form>
+            </div>
+          </div>
+          <div class="success hide">
+            <h4>You have successfully sent the message</h4>
+          </div>
+          <div class="fail hide">
+            <h4>An error occurred. Submission was not sent. Please try again later</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  <!-- About Area End -->
+  

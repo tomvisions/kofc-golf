@@ -1,0 +1,98 @@
+
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area section" style="background-image: url({{sponsorCoverImage}})">
+    <div class="container">
+      <div class="row">
+        <div class="page-banner-title text-center col-12">
+          <h2>become a sponsor</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Banner Area End -->
+
+    <!-- Staff Area Start -->
+    <div id="staff-area" class="staff-area section pb-120 pt-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Staff Tab List -->
+                    <ul class="staff-tab-list nav nav-tabs text-center">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#diamond">Diamond</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#platnum">Platium</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#gold">Gold</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#silver">Silver</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bronze">Bronze</button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Staff Tab panes -->
+                <div class="tab-content">
+                    <div *ngFor="let sponsorInfo of this.sponsorLevel" role="tabpanel" [ngClass]="{'tab-pane': true, 'fade': true, 'active': sponsorInfo.level === sponsorLevelDefault, 'show': sponsorInfo.level === sponsorLevelDefault}" id="{{sponsorInfo.level}}">
+                        <div class="row">
+                            <!-- About Image -->
+                            <div class="about-image col-lg-5 col-12">
+                                <img class="img-fluid" src="{{sponsorInfo.image}}" alt="">
+                            </div>
+                            <!-- About Content -->
+                            <div class="about-content col-lg-7 col-12">
+                                <h4>{{sponsorInfo.name}} Sponsorship</h4>
+                                <h2>${{sponsorInfo.amount}}</h2>
+                                <ul class="content" [innerHTML]="this.sponsorInfo.content"></ul>                                
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-md-7 col-12 mb-30">
+                <div class="contact-form">
+                  <div class="form">
+                    <h4>Sponsor Form</h4>
+                    <form [formGroup]="sponsorForm">
+                       <select name="returningSponsor" [formControlName]="'returningSponsor'"  [(ngModel)]="returningSponsorDefaultValue">
+                        <option *ngFor="let returningSponsorValue of returningSponsorValues" value="{{returningSponsorValue.value}}">
+                            {{returningSponsorValue.label}}
+                            </option>
+                       </select>     
+                       <select name="level" [formControlName]="'level'"  [(ngModel)]="sponsorLevelDefaultValue">
+                        <option *ngFor="let sponsorLevelValue of this.sponsorLevelValues" value="{{sponsorLevelValue.value}}">
+                            {{sponsorLevelValue.label}}
+                            </option>
+                       </select>     
+
+                      <input type="text" name="nameOfSponsor" placeholder="Sponsor Company Name" [formControlName]="'nameOfSponsor'">
+                      <input type="text" name="mailingAddress" placeholder="Sponsor Mailing Address" [formControlName]="'mailingAddress'">
+                      <input type="text" name="contact" placeholder="Contact Name" [formControlName]="'contact'">
+                      <input type="text" name="email" placeholder="Contact Email" [formControlName]="'email'">
+                 
+                     
+                      <input type="text" name="phone" placeholder="Contact Phone Number" [formControlName]="'phone'">
+                      <textarea name="specialRequeats" placeholder="Special Requests (e.g., preferred sign location)" [formControlName]="'specialRequeats'"></textarea>
+                      <button (click)="submitForSponsor()" class="submit">Submit Sponsor Information</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="success hide">
+                  <h4>You have successfully sent the message</h4>
+                </div>
+                <div class="fail hide">
+                  <h4>An error occurred. Submission was not sent. Please try again later</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>

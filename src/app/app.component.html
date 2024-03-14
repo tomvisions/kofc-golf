@@ -1,0 +1,62 @@
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <!-- Modernizer JS
+============================================ -->
+<!-- Body main wrapper start -->
+<div class="wrapper fix">
+
+  <!-- Header Area Start -->
+  <div id="header-area" class="header-area section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 position-relative">
+          <!-- Logo -->
+          <a class="logo float-start" href="index.html"><img alt="Site Logo" src="{{siteLogo}}" width="100" height="100" /></a>
+          <!---- Menu ---->
+          <div id="main-menu" class="main-menu float-end">
+            <nav>
+              <ul>
+                <li class="home active"><a href="/">home</a></li>
+                <li class="contact"><a href="/register">register</a></li>
+                <li class="golf"><a  href="/info">Info</a>
+                <li class="support-membership"><a href="/sponsor">sponsorship</a>
+                  <ul>
+                    <li class="support-membership"><a href="/sponsor">become a sponsor</a>
+                    <li class="support-membership"><a href="/sponsors">current sponsors</a>
+                  </ul>
+                </li>
+                <li class="volunteer"><a href="/volunteer">volunteer</a></li>
+                <li class="shop"><a href="/charities">charities</a></li>
+                <li class="join-academy"><a href="/gallery">gallery</a></li>
+                <li class="about"><a  href="/about">kofc 9544</a>
+
+              </ul>
+            </nav>
+          </div>
+          <!---- Mobile Menu ---->
+          <div class="mobile-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header Area End -->
+  <router-outlet></router-outlet>
+  <!-- Footer Top Area Start -->
+  <!-- Footer Top Area End -->
+
+  <!-- Footer Bottom Area Start -->
+  <div class="footer-bottom-area section">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+
+        <!-- Copyright -->
+        <div class="copyright col-auto">
+          <p>Copyright &copy; <span>Knights of Colombus</span>. {{year}}. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Bottom Area End -->
+
+</div>
+<!-- Body main wrapper end -->

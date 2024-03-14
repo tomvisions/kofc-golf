@@ -1,0 +1,87 @@
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area section" style="background-image: url({{golfCoverImage}})">
+    <div class="container">
+      <div class="row">
+        <div class="page-banner-title text-center col-12">
+          <h2>Tournament Info</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Banner Area End -->
+  
+  <!-- About Area Start -->
+  <div id="about-area" class="about-area section pb-60 pt-60">
+    <div class="container">
+      <div class="row flex-column flex-lg-row-reverse">
+        <!-- About Image -->
+        <div class="about-image col-lg-5 col-12">
+          <img src="{{golfSideImage}}" alt="About MamboleFC">
+        </div>
+        <!-- About Content -->
+        <div class="about-content about-content-2 col-lg-7 col-12">
+            <h1>Knights of Columbus 9544 Charity Golf Tournament</h1>
+       
+            
+              Date: Tuesday, May 21st, 2024                                                  
+            
+            Loch March Golf & Country Club:  1755 Old Carp Rd.                              
+            
+            Registratiion: $175 per golfer.                                                                                                                                                                                
+            
+            Registration includes: golf, cart and dinner.                                                                
+            
+            <h1>Agenda</h1>
+
+            <ul>
+
+            <li>    
+            Registration starts at 11:00 a.m
+        </li>
+            <li>
+            Raffle Board and Silent Auction 11:00 - 12:30 a.m.
+        </li>
+        <li>
+            Shotgun Start: 1:00 p.m.
+        </li>
+        <li>
+            Play ends at: 5:30 p.m.
+        </li>
+        <li>
+            Dinner at 6:00 pm
+        </li>
+        <li>
+            Prizes and Auctions at: 6:45 p.m.
+        </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-12 mb-30">
+            <div class="contact-form">
+              <div class="form">
+                <h4>Contact Us</h4>
+                <form [formGroup]="contactForm">
+                  <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
+                  <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
+                  <input type="text" name="subject" placeholder="Subject" [formControlName]="'subject'">
+                  <input type="text" name="phone" placeholder="Phone" [formControlName]="'phone'">
+                  <textarea name="body" placeholder="Body" [formControlName]="'body'"></textarea>
+                  <button (click)="submitToContactUs()" class="submit">Send</button>
+                </form>
+              </div>
+            </div>
+            <div class="success hide">
+              <h4>You have successfully sent the message</h4>
+            </div>
+            <div class="fail hide">
+              <h4>An error occurred. Submission was not sent. Please try again later</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- About Area End -->
+  
