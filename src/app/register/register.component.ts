@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { RegisterService } from './register.service';
+import { Register, RegisterResponse } from './register.type';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -11,10 +13,10 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
   golfCoverImage: string = '';
-  contactForm:FormGroup;
+  registrationForm: FormGroup;
 
-  constructor(private _imageService: ImageService,  private _formBuilder: FormBuilder, private _contactService: RegisterService) {
-    this.contactForm = this._formBuilder.group({});
+  constructor(private _imageService: ImageService, private _formBuilder: FormBuilder, private _registerService: RegisterService) {
+    this.registrationForm = this._formBuilder.group({});
   }
 
   ngOnInit() {
@@ -23,31 +25,30 @@ export class RegisterComponent implements OnInit {
 
 
     // Create the selected product form
-    this.contactForm = this._formBuilder.group({
+    this.registrationForm = this._formBuilder.group({
       name: '',
-      subject: '',
       email: '',
       phone: '',
-      body: '',
+      body: ''
     });
   }
 
 
-  submitToContactUs() {
-    // Get the product object
-    const contact = this.contactForm.getRawValue();
-    contact['email_type'] = 'register';
-    // Update the product on the server
-    this._contactService.sendContact(contact).subscribe((academy:any) => {
-      console.log('the academy');
-      console.log(academy);
-/*      if (academy['result'] === 'success') {
-        document.querySelector('div.contact-form').classList.add('hide');
-        document.querySelector('div.success').classList.remove('hide');
+  submitToRegister() {
+
+    const register: Register = this.registrationForm.getRawValue();
+    register.email_type = 'register';
+
+    this._registerService.sendRegistration(register).subscribe((register: any) => {
+
+      if (register.success) {
+        document.querySelector('div.contact-form')?.classList.add('hide');
+        document.querySelector('div.success')?.classList.remove('hide');
       } else {
-        document.querySelector('div.contact-form').classList.add('hide');
-        document.querySelector('div.fail').classList.remove('hide');
-      } */
-    });
+        document.querySelector('div.contact-form')?.classList.add('hide');
+        document.querySelector('div.fail')?.classList.remove('hide');
+        
+      } 
+    }); 
   }
 }

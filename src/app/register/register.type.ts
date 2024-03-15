@@ -2,6 +2,12 @@ export interface Register
 {
   name: string;
   email: string;
-  subject: string;
+  phone: string;
   body: string;
+  email_type: string
+}
+
+export interface RegisterResponse {
+  message: string;
+  success: boolean
 }

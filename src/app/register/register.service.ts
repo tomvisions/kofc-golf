@@ -34,12 +34,12 @@ export class RegisterService
     return this._registerPlayer.asObservable();
   }
 
-  sendContact(joinAcademy: Register): Observable<Register>
+  sendRegistration(joinAcademy: Register): Observable<Register>
   {
     console.log(joinAcademy);
     return this.contactUs$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.post<Register>(`${this._sharedService.apiLocation}/api/mail`,
+      switchMap(theContactUs => this._httpClient.post<Register>(`${this._sharedService.apiLocation}/api/v1/mail`,
         joinAcademy, { headers: {
             'Content-Type': 'application/json'
           }}).pipe(
