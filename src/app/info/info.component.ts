@@ -22,7 +22,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.golfCoverImage = this._imageService.loadImage1920x940('test-ball2.jpeg');
-    this.golfSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
+    this.golfSideImage =  this._imageService.loadImage450x450('golf-carts.jpeg');
 
     this._metaTagService.addTags([
       {

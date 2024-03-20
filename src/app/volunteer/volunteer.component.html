@@ -12,7 +12,7 @@
 
   <!-- About Area Start -->
   <div id="about-area" class="about-area section pb-60 pt-60">
-    <div class="container">
+    <div class="container sponsor">
       <div class="row flex-column flex-lg-row-reverse">
         <!-- About Image -->
         <div class="about-image col-lg-5 col-12">
@@ -20,11 +20,11 @@
         </div>
         <!-- About Content -->
         <div class="about-content about-content-2 col-lg-7 col-12">
-          <h1>Volunteers Needed</h1>
+          <h3>Volunteers Needed</h3>
           <p>
           The Knights of Columbus needs your help to make our 2024 Charity Golf Tournament a successful fundraiser for our Charities, and an event to remember for all the participants. Thank you in advance, your assistance is vital to our success.
           </p>
-          <h2>What can I do?</h2>
+          <h3>What can I do?</h3>
           <p>
           We are seeking volunteers to help on the day of the event (Tuesday, May 21, 2024) with a variety of tasks, including but not limited to:
           </p>
@@ -36,14 +36,14 @@
             <li>the silent auction.</li>
           </ul>
 
-          <h2>When and where do I need to be?</h2>
+          <h3 class="pt-30">When and where do I need to be?</h3>
           <p>
             Volunteers should arrive by <strong>11:00 a.m.</strong> on <strong>Tuesday, March 21st</strong> at the <strong>Loch March Golf & Country Club</strong> (1755 Old Carp Rd, Kanata, ON K2K 1X7).
           </p>
           <p>
           More information on what to wear and the schedule for the day will be provided to all volunteers via email before the tournament.
           </p>
-          <h2>How do I volunteer?</h2>
+          <h3>How do I volunteer?</h3>
           <p>
           Please complete the form below, or contact Marc Souliere at:  <a href="mailto:resolvewithmarc&#64;sympatico.ca">resolvewithmarc&#64;sympatico.ca</a>
           </p>
@@ -55,13 +55,11 @@
         <div class="col-lg-8 col-md-7 col-12 mb-30">
           <div class="sponsor-form">
             <div class="form">
-              <h4>Volunteer Form</h4>
+              <h3>Volunteer Form</h3>
               <form [formGroup]="volunteerForm">
 
                 <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
-                <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
-                <input type="text" name="phone" placeholder="Phone" [formControlName]="'phone'">
-
+                <input type="text" name="email" placeholder="Email or Phone" [formControlName]="'email'">
                 <button (click)="submitForVolunteer()" class="submit">Send</button>
               </form>
             </div>

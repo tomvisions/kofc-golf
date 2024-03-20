@@ -39,14 +39,14 @@ export class SponsorService {
                 image: this._imageService.loadImage250x150("diamond-sponsor.png"),
                 name: "Diamond",
                 amount: "4000",
-                content: "<li>Recognized as the Exclusive Diamond Sponsor for the tournament</li><li>•Company name and logo displayed prominently on event materials</li><li>•Registration for a golf team (maximum 4 players), green fees, a golf cart, and a buffet supper for the team are included</li>",
+                content: "<li>Recognized as the Exclusive Diamond Sponsor for the tournament</li><li>Company name and logo displayed prominently on event materials</li><li>Registration for a golf team (maximum 4 players), green fees, a golf cart, and a buffet supper for the team are included</li>",
             },
             {
                 level: "platnum",
                 image: this._imageService.loadImage250x150("platnum-sponsor.png"),
                 name: "Platnum",
                 amount: "2000",
-                content: "<li>Platinum sponsors can choose to be recognized either as a dinner sponsor, or as a Golf Cart sponsor</li><li>•Company name will be displayed prominently at either the dinner, or on the players’ golf carts</li>",
+                content: "<li>Platinum sponsors can choose to be recognized either as a dinner sponsor, or as a Golf Cart sponsor</li><li>Company name will be displayed prominently at either the dinner, or on the players’ golf carts</li>",
             },
             {
                 level: "gold",
@@ -64,7 +64,7 @@ export class SponsorService {
             },
           {
             level: "bronzeplus",
-            image: this._imageService.loadImage250x150("bronze-sponsor.png"),
+            image: this._imageService.loadImage250x150("bronze-sponsor-plus.png"),
             name: "Bronze Plus",
             amount: "250",
             content: "<li>Bronze Plus sponsors will be recognized as a Hole sponsor and will have the opportunity to distribute goods to the golfing participants (120 players expected)</li><li>Company name will be display ed prominently at one hole (if a specific hole is preferred, please indicate your top 3 choices in the comments of the Sponsorship form below)</li>"

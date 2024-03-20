@@ -22,7 +22,7 @@ export class VolunteerComponent implements OnInit {
 
   ngOnInit(): void {
     this.volunteerCoverImage = this._imageService.loadImage1920x940('volunteer-background.jpeg'); //'https://placehold.co/1920x940'//this._imageService.loadImage1920x940('who-we-are-home.jpg');
-    this.volunteerSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
+    this.volunteerSideImage =  this._imageService.loadImage450x450('volunteer-side-picture.jpeg');
 
     this._metaTagService.addTags([
       {
@@ -41,7 +41,7 @@ export class VolunteerComponent implements OnInit {
         name: '',
         email: '',
         phone: '',
-      });    
+      });
   }
 
   submitForVolunteer() {

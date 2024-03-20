@@ -20,15 +20,15 @@
         </div>
         <!-- About Content -->
         <div class="about-content about-content-2 col-lg-7 col-12">
-            <h1>Knights of Columbus 9544 Charity Golf Tournament</h1>
+            <h2>Knights of Columbus 9544 Annual Charity Golf Tournament</h2>
             <ul>
-              <li>Date: Tuesday, May 21st, 2024</li>
-              <li>Loch March Golf & Country Club:  1755 Old Carp Rd.</li>
-              <li>Registratiion: $175 per golfer.</li>
-              <li>Registration includes: golf, cart and dinner.</li>
+              <li>Date: Tuesday, May 21, 2024</li>
+              <li>Loch March Golf & Country Club:  1755 Old Carp Rd., Kanata, ON K2K 1X7</li>
+              <li>Registratiion: $175 per golfer (includes green fees, golf cart, and buffet supper)</li>
+              <li>Maximum 4 golfers per team</li>
             </ul>
 
-            <h1>Agenda</h1>
+            <h2 class="pt-50">Agenda</h2>
 
             <ul>
 
@@ -54,18 +54,18 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container pt-20">
         <div class="row">
           <div class="col-lg-8 col-md-7 col-12 mb-30">
             <div class="sponsor-form">
               <div class="form">
-                <h4>Contact Us</h4>
+                <h4>Contact us if you have any questions</h4>
                 <form [formGroup]="contactForm">
                   <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
                   <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
                   <input type="text" name="subject" placeholder="Subject" [formControlName]="'subject'">
                   <input type="text" name="phone" placeholder="Phone" [formControlName]="'phone'">
-                  <textarea name="body" placeholder="Body" [formControlName]="'body'"></textarea>
+                  <textarea name="body" placeholder="Comments/Questions?" [formControlName]="'body'"></textarea>
                   <button (click)="submitToContactUs()" class="submit">Send</button>
                 </form>
               </div>
