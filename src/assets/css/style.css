@@ -1668,7 +1668,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding: 10px 34px;
   line-height: 22px;
   border-radius: 5px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: Montserrat;
   margin-top: 10px;
   font-weight: 600;

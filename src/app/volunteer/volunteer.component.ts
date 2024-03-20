@@ -39,26 +39,26 @@ export class VolunteerComponent implements OnInit {
       // Create the selected product form
       this.volunteerForm = this._formBuilder.group({
         name: '',
-        email: '',
-        phone: '',
+        emailOrPhone: '',
+
       });
   }
 
   submitForVolunteer() {
     // Get the product object
-    const contact = this.volunteerForm.getRawValue();
-    contact['email_type'] = 'sponsor';
+    const volunteer = this.volunteerForm.getRawValue();
+    volunteer['email_type'] = 'volunteer';
     // Update the product on the server
-    this._volunteerService.sendVolunteer(contact).subscribe((sponsor:any) => {
+    this._volunteerService.sendVolunteer(volunteer).subscribe((volunteered:any) => {
       console.log('the academy');
-      console.log(sponsor);
-/*      if (academy['result'] === 'success') {
-        document.querySelector('div.contact-form').classList.add('hide');
+      console.log(volunteered);
+      if (volunteered['success']) {
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {
-        document.querySelector('div.contact-form').classList.add('hide');
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.fail').classList.remove('hide');
-      } */
+      }
     });
   }
 }

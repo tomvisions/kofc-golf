@@ -85,10 +85,9 @@ export class SponsorService {
 
     sendContact(joinAcademy: Sponsor): Observable<Sponsor>
     {
-      console.log(joinAcademy);
       return this.sponsorUs$.pipe(
         take(1),
-        switchMap(theContactUs => this._httpClient.post<Sponsor>(`${this._sharedService.apiLocation}/api/sponsor`,
+        switchMap(theContactUs => this._httpClient.post<Sponsor>(`${this._sharedService.apiLocation}/api/v1/mail`,
           joinAcademy, { headers: {
               'Content-Type': 'application/json'
             }}).pipe(

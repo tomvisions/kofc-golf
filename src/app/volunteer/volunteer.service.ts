@@ -73,19 +73,20 @@ export class VolunteerService {
         ]
     }
 
-    
-    
+
+
     sendVolunteer(joinAcademy: Volunteer): Observable<Volunteer>
     {
       console.log(joinAcademy);
+      console.log(`${this._sharedService.apiLocation}/api/v1/mail`)
       return this.sponsorUs$.pipe(
         take(1),
-        switchMap(theContactUs => this._httpClient.post<Volunteer>(`${this._sharedService.apiLocation}/api/sponsor`,
+        switchMap(theContactUs => this._httpClient.post<Volunteer>(`${this._sharedService.apiLocation}/api/v1/mail`,
           joinAcademy, { headers: {
               'Content-Type': 'application/json'
             }}).pipe(
           map((joinAcademy) => {
-  
+
             return joinAcademy;
           }),
         ))

@@ -51,19 +51,6 @@ export class SponsorComponent implements OnInit {
     this.sponsorSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
     this.sponsorLevel = this._sponsorService.getSponsors()
 
-
-
-
-    console.log(this.sponsorLevel);
-    this.sponsorLevel.map((sponsor:any) => {
-      console.log(sponsor)
-
-      console.log(sponsor.length)
-
-      console.log(sponsor.level)
-    })
-    console.log(this.sponsorLevel.diamond)
-
     this._metaTagService.addTags([
       {
         name: 'keywords',
@@ -97,13 +84,13 @@ export class SponsorComponent implements OnInit {
     this._sponsorService.sendContact(contact).subscribe((sponsor:any) => {
       console.log('the academy');
       console.log(sponsor);
-/*      if (academy['result'] === 'success') {
+     if (sponsor['result'] === 'success') {
         document.querySelector('div.contact-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {
         document.querySelector('div.contact-form').classList.add('hide');
         document.querySelector('div.fail').classList.remove('hide');
-      } */
+      }
     });
   }
 }

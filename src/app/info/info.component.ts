@@ -42,7 +42,7 @@ export class InfoComponent implements OnInit {
         subject: '',
         email: '',
         phone: '',
-        body: '',
+        message: '',
       });
   }
 
@@ -53,15 +53,13 @@ export class InfoComponent implements OnInit {
     contact['email_type'] = 'contact_us';
     // Update the product on the server
     this._infoService.sendContact(contact).subscribe((academy:any) => {
-      console.log('the academy');
-      console.log(academy);
-/*      if (academy['result'] === 'success') {
-        document.querySelector('div.contact-form').classList.add('hide');
+      if (academy['success']) {
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {
-        document.querySelector('div.contact-form').classList.add('hide');
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.fail').classList.remove('hide');
-      } */
+      }
     });
   }
 }

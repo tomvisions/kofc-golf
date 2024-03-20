@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule, UntypedFormArray, UntypedFormBuilder,
 export class RegisterComponent implements OnInit {
   registrationForm:FormGroup;
   golfCoverImage: string = '';
+  golfSideImage: string = '';
   submitted = false;
   register: Register = {team_name: "", player: [], body:"", email_type: ""}
 
@@ -33,6 +34,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this._imageService.setBannerPrefix();
     this.golfCoverImage = this._imageService.loadImage1920x940('loch-march-background.jpeg');
+    this._imageService.setSitePrefix();
+    this.golfSideImage = this._imageService.loadImage450x450( 'tournament-sidepic.png');
+
 
     this.registrationForm = this._formBuilder.group({
       team_name: '',
@@ -86,7 +90,6 @@ export class RegisterComponent implements OnInit {
    */
   addEmailField(): void
   {
-
     if (this.playersForm.length >= 3 ) {
         document.getElementById('AddPlayer').innerText = ""
     }
@@ -107,38 +110,6 @@ export class RegisterComponent implements OnInit {
     this._changeDetectorRef.markForCheck();
   }
 
-
-  getFormValidationErrors() {
-    Object.keys(this.registrationForm.controls).forEach(key => {
-      console.log('the key')
-      console.log(key)
-      const controlErrors: ValidationErrors = this.registrationForm.get(key).errors;
-      if (controlErrors != null) {
-        Object.keys(controlErrors).forEach(keyError => {
-          console.log('Key control: ' + key + ', keyError: ' + keyError + ', err value: ', controlErrors[keyError]);
-        });
-      }
-      if (key === 'players') {
-        Object.keys(this.registrationForm.get(key)['controls']).forEach(key2 => {
-          console.log('key2')
-            console.log(this.registrationForm.get(key)['controls'][key2].errors);
-        })
-/*        Object.keys(this.registrationForm.get('players')['controls']).forEach(key => {
-          console.log('the key2')
-          console.log(key)
-          console.log(this.registrationForm.get('players')['controls'][key])
-          const controlErrors: ValidationErrors = this.registrationForm.get('players');
-          const check = controlErrors['controls']['players'][key].errors;
-          if (check != null) {
-            Object.keys(check).forEach(keyError => {
-              console.log('Key control: ' + key + ', keyError: ' + keyError + ', err value: ', controlErrors[keyError]);
-            });
-          }
-        }) */
-      }
-    });
-
-  }
   get f() {
     console.log('error check')
     return this.registrationForm.controls;
@@ -149,17 +120,13 @@ export class RegisterComponent implements OnInit {
   }
 
   submitToRegister() {
-    this.getFormValidationErrors();
+
     console.log('woot')
     this.submitted = true;
 
   console.log('checking')
     console.log(this.registrationForm.invalid)
     // stop here if form is invalid
-    if (this.registrationForm.invalid) {
-      console.log('invalid')
-      return;
-    }
 
     const register = this.registrationForm.getRawValue();
     console.log('the data');
@@ -168,28 +135,9 @@ export class RegisterComponent implements OnInit {
     let check:any = {}
     let errors:any = []
 
+    register.email_type = 'register';
 
-    /*      let keyExist = Object.keys(register).some(item => {
-            console.log('the check')
-            console.log(item);
-          });
-
-          for (let item in register) {
-          if (!(register[item])) {
-
-          }
-
-        }
-    /*    this.formCheck.map((item: string) => {
-
-          let keyExist = Object.keys(register).some(item => {
-            console.log('the check')
-            console.log(item);
-          });
-
-        }); */
-
-/*    this._registerService.sendRegistration(register).subscribe((register: any) => {
+    this._registerService.sendRegistration(register).subscribe((register: any) => {
 
       if (register.success) {
         document.querySelector('div.contact-form')?.classList.add('hide');
@@ -199,6 +147,6 @@ export class RegisterComponent implements OnInit {
         document.querySelector('div.fail')?.classList.remove('hide');
 
       }
-    }); */
+    });
   }
 }

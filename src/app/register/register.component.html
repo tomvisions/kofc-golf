@@ -11,12 +11,37 @@
   <!-- Page Banner Area End -->
 
   <div id="contact-area" class="contact-area section pb-60 pt-60">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-7 col-12 mb-30">
+    <div class="container about-content">
+
+
+      <div class="row flex-column flex-lg-row-reverse">
+        <div class="about-image col-lg-5 col-12">
+          <img src="{{golfSideImage}}" alt="About MamboleFC">
+        </div>
+        <div class="about-content about-content-2 col-lg-7 col-12">
+
+          <h2>Calling all golfers</h2>
+          <p>
+          May 2024 is quickly approaching and the Knights of Columbus Council 9544 is looking forward
+          to hosting our Annual Charity Golf Tournament at the Loch March Golf &amp; Country Club in
+          Kanata.
+          </p>
+          <p>
+          Please complete the registration form below and join us on May 21, 2024 for a wonderful day
+          of golf, followed by a buffet supper with a Silent Auction. There will also be a Raffle Board and
+          lots of prizes to be won.
+          </p>
+          <p>
+          Registration costs $175/person (maximum 4 players per team), which includes green fees, a
+          golf cart and the buffet supper. Please note that individual golfers will be placed into teams on
+          the day of the event.
+          </p>
+          <p>
+          Thank you in advance for your participation and for helping raise funds for our charities.
+          </p>
           <div class="contact-form">
             <div class="form">
-              <h4>Registration Form</h4>
+              <h3>Registration Form</h3>
               <form [formGroup]="registrationForm">
 
                 <input type="text"  class="full" name="team_name" placeholder="Team Name (optional)" [formControlName]="'team_name'">
@@ -32,8 +57,8 @@
                       </div>
                     </div>
                   </div>
-                  <div id="AddPlayer">
-                    <button class="ml-2 font-medium text-secondary group-hover:underline"  (click)="addEmailField()">Add a Player</button>
+                  <div id="AddPlayer" style="margin:20px 0 20px 6px;" class="about-content">
+                    <a style="cursor: pointer;" (click)="addEmailField()">Add a Player</a>
                   </div>
                 </div>
 
@@ -44,10 +69,18 @@
             </div>
           </div>
           <div class="success hide">
-            <h4>You have successfully registered for the tournament. Please send xxx via e-transter to email&#64;test.com or contact Richard Van Loon at 613-111-1111</h4>
+            <h4>You have successfully registered for the tournament.</h4>
           </div>
           <div class="fail hide">
             <h4>Registration error. Please try again later</h4>
+          </div>
+          <div>
+            <p class="pt-30">
+              Please send payment via e-transter to golfregistration&#64;kofc9544.ca OR by mail and cheque payable to <strong>Knights of Columbus 9544 Charity Golf Tournament</strong>.
+            </p>
+            <p>
+              For additional information, please contact <strong>Richard Van Loon, Registration Coordinator</strong>, at <a href="maito:golfregistration&#64;kofc9544.ca">golfregistration&#64;kofc9544.ca</a>
+            </p>
           </div>
 
         </div>

@@ -36,15 +36,15 @@ export class InfoService
 
   sendContact(joinAcademy: Contact): Observable<Contact>
   {
-    console.log(joinAcademy);
     return this.contactUs$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.post<Contact>(`${this._sharedService.apiLocation}/api/mail`,
+      switchMap(theContactUs => this._httpClient.post<Contact>(`${this._sharedService.apiLocation}/api/v1/mail`,
         joinAcademy, { headers: {
             'Content-Type': 'application/json'
           }}).pipe(
         map((joinAcademy) => {
-
+          console.log('arrived here')
+          console.log(joinAcademy);
           return joinAcademy;
         }),
       ))
