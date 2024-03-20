@@ -36,45 +36,53 @@ export class SponsorService {
         return [
             {
                 level: "diamond",
-                image: this._imageService.loadImage250x150("diamond-level.jpg"),
+                image: this._imageService.loadImage250x150("diamond-sponsor.png"),
                 name: "Diamond",
                 amount: "4000",
-                content: "<li>Recognised as the Tournament Sponsor</li><li>Name and Logo displayed prominently on event materials</li><li>Only One Diamond Sponsor will be used</li><li>Registration fee for golf, cart and lunch for foursome at the Annual Charity Golf Tournament is included</li>",
+                content: "<li>Recognized as the Exclusive Diamond Sponsor for the tournament</li><li>•Company name and logo displayed prominently on event materials</li><li>•Registration for a golf team (maximum 4 players), green fees, a golf cart, and a buffet supper for the team are included</li>",
             },
             {
                 level: "platnum",
-                image: this._imageService.loadImage250x150("platnum-level.jpg"),
+                image: this._imageService.loadImage250x150("platnum-sponsor.png"),
                 name: "Platnum",
                 amount: "2000",
-                content: "<li>Recognised as a Lunch Sponsor or a Players' Golf Cart Sponsor</li><li>Name displayed prominently at Lunch or on Players' Golf Carts</li>",
+                content: "<li>Platinum sponsors can choose to be recognized either as a dinner sponsor, or as a Golf Cart sponsor</li><li>•Company name will be displayed prominently at either the dinner, or on the players’ golf carts</li>",
             },
             {
                 level: "gold",
-                image: this._imageService.loadImage250x150("gold-level.jpg"),
+                image: this._imageService.loadImage250x150("gold-sponsor.png"),
                 name: "Gold",
                 amount: "1000",
-                content: "<li>Recognised as a Skills Contest Hole Sponsor</li><li>Name displayed prominently at Lunch or on Players' Golf Carts</li><li>Skills Contests will be Straightest Drive, On the Green, and Closest to the Pin</li>"
+                content: "<li>Gold sponsors will be recognized as a Skills Contest sponsor (i.e., for the Straightest Drive, On the Green, or Closest to the Pin)</li><li>Company name will be displayed prominently at the associated skills contest hole</li>"
             },
             {
                 level: "silver",
-                image: this._imageService.loadImage250x150("silver-level.jpeg"),
+                image: this._imageService.loadImage250x150("silver-sponsor.png"),
                 name: "Silver",
                 amount: "500",
-                content: "<li>Recognised as a Refreshment Cart Sponsor</li><li>Name displayed prominently on the teeing ground at each Skills Contest</li>"
+                content: "<li>Silver sponsors will be recognized as a Refreshment Cart sponsor</li><li>Company name will be displayed on the teeing ground for each skills contest</li>"
             },
-            {
+          {
+            level: "bronzeplus",
+            image: this._imageService.loadImage250x150("bronze-sponsor.png"),
+            name: "Bronze Plus",
+            amount: "250",
+            content: "<li>Bronze Plus sponsors will be recognized as a Hole sponsor and will have the opportunity to distribute goods to the golfing participants (120 players expected)</li><li>Company name will be display ed prominently at one hole (if a specific hole is preferred, please indicate your top 3 choices in the comments of the Sponsorship form below)</li>"
+          },
+      {
                 level: "bronze",
-                image: this._imageService.loadImage250x150("bronze-level.jpg"),
+                image: this._imageService.loadImage250x150("bronze-sponsor.png"),
                 name: "Bronze",
                 amount: "150",
-                content: "<li>Recognised as a Hole Sponsor</li><li>Name displayed prominently on the teeing ground at one hole</li>"
+                content: "<li>Bronze sponsors will be recognized as a Hole sponsor</li><li>•Company name will be displayed prominently at one hole (if a specific hole is preferred, please indicate your top 3 choices in the comments of the Sponsorship form below)</li>"
             }
+
 
         ]
     }
 
-    
-    
+
+
     sendContact(joinAcademy: Sponsor): Observable<Sponsor>
     {
       console.log(joinAcademy);
@@ -85,7 +93,7 @@ export class SponsorService {
               'Content-Type': 'application/json'
             }}).pipe(
           map((joinAcademy) => {
-  
+
             return joinAcademy;
           }),
         ))

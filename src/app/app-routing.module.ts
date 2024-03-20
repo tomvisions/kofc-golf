@@ -17,7 +17,7 @@ const routes: Routes = [
       component: HomeComponent,
     },
     {
-      path: 'about',
+      path: 'kofc9544',
       component: AboutComponent,
     },
     {
@@ -39,14 +39,6 @@ const routes: Routes = [
     {
       path: 'sponsors',
       component: SponsorsComponent,
-    },
-    {
-      path: 'gallery',
-      component: GalleryComponent,
-      resolve: {
-        images: GalleryResolver,
-      }
-  
     },
     {
       path: 'register',

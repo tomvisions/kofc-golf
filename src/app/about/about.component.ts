@@ -20,7 +20,10 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this._imageService.setBannerPrefix();
     this.aboutCoverImage = this._imageService.loadImage1725x442('golf-background2.png');
-    this.aboutSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
+    this._imageService.setSitePrefix();
+   // this.aboutSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
+    this.aboutSideImage = this._imageService.loadImage270x284('kofc-plague.jpeg');
+
 
     this._metaTagService.addTags([
       {

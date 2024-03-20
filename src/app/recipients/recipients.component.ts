@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image.service';
 import { Meta } from '@angular/platform-browser';
+import { RecipientsService } from './recipients.service';
 
 @Component({
   selector: 'app-recipients',
@@ -10,10 +11,10 @@ import { Meta } from '@angular/platform-browser';
 export class RecipientsComponent implements OnInit {
   recipientsCoverImage: string = ""
   recipientsSideImage: string = ""
-  
+  charities:any;
 
 
-  constructor(private _imageService: ImageService, private _metaTagService: Meta) {}
+  constructor(private _imageService: ImageService, private _metaTagService: Meta, private _recipientsService: RecipientsService) {}
 
 
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class RecipientsComponent implements OnInit {
    this.recipientsCoverImage = this._imageService.loadImage1920x940('loch-march-sponsor.jpg'), 
    //this.sponsorCoverImage = 'https://placehold.co/1920x940'//this._imageService.loadImage1920x940('who-we-are-home.jpg');
     this.recipientsSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
-
+    this.charities = this._recipientsService.getCharities();
 
     this._metaTagService.addTags([
       {

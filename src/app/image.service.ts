@@ -29,7 +29,7 @@ export class ImageService {
       "resize": {
         "width": 1725,
         "height": 442,
-        "fit": "cover"
+        "fit": "inside"
       }
     });
 
@@ -40,9 +40,22 @@ export class ImageService {
   loadImage250x150(image:string) {
     const resizedImage = this.resizeWithInS3(image, {
       "resize": {
-        "width": 250,
+        "width": 150,
         "height": 150,
-        "fit": "cover"
+        "fit": "inside"
+      }
+    });
+
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+
+  loadImage300x150(image:string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      "resize": {
+        "width": 300,
+        "height": 150,
+        "fit": "inside"
       }
     });
 
@@ -69,7 +82,7 @@ export class ImageService {
       "resize": {
         "width": 270,
         "height": 284,
-        "fit": "cover"
+        "fit": "inside"
       }
     });
 

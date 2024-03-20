@@ -20,18 +20,19 @@ export class SponsorComponent implements OnInit {
   sponsorForm:FormGroup;
   returningSponsorDefaultValue : any = "null";
   returningSponsorValues: any = [
-    {"label":"Returning Sponsor?", "value":"null"}, 
-    {"label":"Yes", "value":"yes"}, 
-    {"label":"No", "value":"no"}, 
+    {"label":"Returning Sponsor?", "value":"null"},
+    {"label":"Yes", "value":"yes"},
+    {"label":"No", "value":"no"},
   ];
   sponsorLevelDefaultValue : string = "null";
   sponsorLevelValues: any = [
-    {"label":"Sponsor Level?", "value":"null"}, 
-    {"label":"Diamond", "value":"diamond"}, 
-    {"label":"Platnum", "value":"platnum"}, 
-    {"label":"Gold", "value":"gold"}, 
-    {"label":"Silver", "value":"silver"}, 
-    {"label":"Bronze", "value":"bronze"}, 
+    {"label":"Sponsor Level?", "value":"null"},
+    {"label":"Diamond", "value":"diamond"},
+    {"label":"Platnum", "value":"platnum"},
+    {"label":"Gold", "value":"gold"},
+    {"label":"Silver", "value":"silver"},
+    {"label":"Bronze Plus", "value":"bronzeplus"},
+    {"label":"Bronze", "value":"bronze"},
 
   ];
 
@@ -45,7 +46,7 @@ export class SponsorComponent implements OnInit {
    // this._imageService.setBannerPrefix();
    // this.aboutCoverImage = this._imageService.loadImage1920x940('who-we-are-home.jpg');
    // this.aboutSideImage = this._imageService.loadImage450x450('about-side-image.jpg');
-   this.sponsorCoverImage = this._imageService.loadImage1920x940('loch-march-sponsor.jpg'), 
+   this.sponsorCoverImage = this._imageService.loadImage1920x940('loch-march-sponsor.jpg'),
    //this.sponsorCoverImage = 'https://placehold.co/1920x940'//this._imageService.loadImage1920x940('who-we-are-home.jpg');
     this.sponsorSideImage =  'https://placehold.co/270x284'//'' this._imageService.loadImage450x450('about-side-image.jpg');
     this.sponsorLevel = this._sponsorService.getSponsors()
@@ -85,7 +86,7 @@ export class SponsorComponent implements OnInit {
           phone: '',
           level: '',
           specialRequeats: ''
-        });    
+        });
   }
 
   submitForSponsor() {

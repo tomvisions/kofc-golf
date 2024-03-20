@@ -13,9 +13,25 @@
 
     <!-- Staff Area Start -->
     <div id="staff-area" class="staff-area section pb-120 pt-120">
-        <div class="container">
+        <div class="container sponsor pb-120 about-content">
             <div class="row">
-                <div class="col-12 text-center">
+              <h1>Sponsorship</h1>
+              <p>
+              Please help make the 2024 Knights of Columbus Golf Tournament a success by becoming a Corporate Sponsor, and supporting our Charities that provide vital services to the vulnerable, disadvantaged and needy in our community.
+              For those who are unable to provide financial support, we also welcome in-kind donations of goods and/or services that will be used as prizes throughout the event, including for the Raffle Board and Silent Auction. All funds raised through the Raffle Board and Silent Auction will be donated to our charities.
+              </p>
+              <h3>Benefits of becoming a Corporate Sponsor</h3>
+              <p>All Corporate Sponsors will enjoy:</p>
+              <ul>
+                <li>Visibility of company name by at least 120 golfers on the day of the event</li>
+                <li>Visibility of company name and logo on Annual Charity Golf Tournament website</li>
+              </ul>
+<h5 style="margin:20px 0 20px 0">
+              Additional benefits depend on the level of sponsorship, outlined below.
+</h5>
+
+
+              <div class="col-12 text-center mb-15">
                     <!-- Staff Tab List -->
                     <ul class="staff-tab-list nav nav-tabs text-center">
                         <li class="nav-item">
@@ -30,7 +46,10 @@
                         <li class="nav-item">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#silver">Silver</button>
                         </li>
-                        <li class="nav-item">
+                      <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bronzeplus">Bronze Plus</button>
+                      </li>
+                      <li class="nav-item">
                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bronze">Bronze</button>
                         </li>
                     </ul>
@@ -41,17 +60,17 @@
                         <div class="row">
                             <!-- About Image -->
                             <div class="about-image col-lg-5 col-12">
-                                <img class="img-fluid" src="{{sponsorInfo.image}}" alt="">
+                                <img class="img-fluid" src="{{sponsorInfo.image}}" alt="" style="width:350px;padding-left:50px" width="150" height="150">
                             </div>
                             <!-- About Content -->
                             <div class="about-content col-lg-7 col-12">
                                 <h4>{{sponsorInfo.name}} Sponsorship</h4>
                                 <h2>${{sponsorInfo.amount}}</h2>
-                                <ul class="content" [innerHTML]="this.sponsorInfo.content"></ul>                                
+                                <ul class="content" [innerHTML]="this.sponsorInfo.content"></ul>
                             </div>
                         </div>
                     </div>
-            
+
                 </div>
             </div>
 
@@ -59,7 +78,7 @@
         <div class="container">
             <div class="row">
               <div class="col-lg-8 col-md-7 col-12 mb-30">
-                <div class="contact-form">
+                <div class="sponsor-form">
                   <div class="form">
                     <h4>Sponsor Form</h4>
                     <form [formGroup]="sponsorForm">
@@ -67,30 +86,37 @@
                         <option *ngFor="let returningSponsorValue of returningSponsorValues" value="{{returningSponsorValue.value}}">
                             {{returningSponsorValue.label}}
                             </option>
-                       </select>     
+                       </select>
                        <select name="level" [formControlName]="'level'"  [(ngModel)]="sponsorLevelDefaultValue">
                         <option *ngFor="let sponsorLevelValue of this.sponsorLevelValues" value="{{sponsorLevelValue.value}}">
                             {{sponsorLevelValue.label}}
                             </option>
-                       </select>     
+                       </select>
 
                       <input type="text" name="nameOfSponsor" placeholder="Sponsor Company Name" [formControlName]="'nameOfSponsor'">
                       <input type="text" name="mailingAddress" placeholder="Sponsor Mailing Address" [formControlName]="'mailingAddress'">
                       <input type="text" name="contact" placeholder="Contact Name" [formControlName]="'contact'">
                       <input type="text" name="email" placeholder="Contact Email" [formControlName]="'email'">
-                 
-                     
-                      <input type="text" name="phone" placeholder="Contact Phone Number" [formControlName]="'phone'">
+                      <input type="text" name="phone" class="full" placeholder="Contact Phone Number" [formControlName]="'phone'">
                       <textarea name="specialRequeats" placeholder="Special Requests (e.g., preferred sign location)" [formControlName]="'specialRequeats'"></textarea>
                       <button (click)="submitForSponsor()" class="submit">Submit Sponsor Information</button>
                     </form>
                   </div>
                 </div>
                 <div class="success hide">
-                  <h4>You have successfully sent the message</h4>
+                  <h4>Thank you for your sponsorship</h4>
                 </div>
                 <div class="fail hide">
                   <h4>An error occurred. Submission was not sent. Please try again later</h4>
+                </div>
+
+                <div class="pt-50">
+                  <h5>Payment Methods</h5>
+                  <p>Payments by Interac e-Transfer should be sent to: payment&#64;kofc9544golf.ca</p>
+
+                  <p>If paying by cheque, please make cheques payable to Knights of Columbus 9544 Charity Golf Tournament. Remit to: 152 Springcreek Crescent, Kanata, ON K2M 2M1</p>
+
+                  <p>For additional information on sponsorship, please contact Nick Rolheiser, Sponsorship Coordinator at n.rolheiser&#64;gmail.com</p>
                 </div>
               </div>
             </div>

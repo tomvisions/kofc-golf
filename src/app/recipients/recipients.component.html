@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="page-banner-title text-center col-12">
-          <h2>charities</h2>
+          <h2>our charities</h2>
         </div>
       </div>
     </div>
@@ -12,15 +12,23 @@
   <!-- Page Banner Area End -->
 
     <!-- Staff Area Start -->
-    <div id="staff-area" class="staff-area section pb-120 pt-120">
+    <div id="staff-area" class="staff-area section pb-120 pt-60">
         <div class="container">
             <div class="row">
-                <h3>Recipients</h3>
-                <ul>
-                    <li>Shephers of Good Hope</li>
-                    <li>Youville Centre</li>
-                    <li>Catholic Centre for Immigrants</li>
-                </ul>
+                <div *ngFor="let charity of this.charities">
+                  <div class="row pt-25 pb-25">
+                      <!-- About Image -->
+                      <div class="about-image col-lg-5 col-12">
+                          <img class="img-fluid" src="{{charity.image}}" alt="">
+                      </div>
+                      <!-- About Content -->
+                      <div class="about-content col-lg-7 col-12">
+                          <h2>{{charity.name}}</h2>
+                          <ul class="content" [innerHTML]="this.charity.content"></ul>
+                          <a href="{{charity.link}}">{{charity.name}}</a>
+                      </div>
+                  </div>
+              </div>
             </div>
 
         </div>

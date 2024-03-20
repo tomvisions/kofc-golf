@@ -9,32 +9,56 @@
     </div>
   </div>
   <!-- Page Banner Area End -->
-  
+
   <div id="contact-area" class="contact-area section pb-60 pt-60">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-7 col-12 mb-30">
           <div class="contact-form">
             <div class="form">
-              <h4>Register here</h4>
+              <h4>Registration Form</h4>
               <form [formGroup]="registrationForm">
-                <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
-                <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
-                <input type="text" name="phone" placeholder="Phone Number" [formControlName]="'phone'">
-                <textarea name="body" placeholder="Dietary Restrictions" [formControlName]="'body'"></textarea>
+
+                <input type="text"  class="full" name="team_name" placeholder="Team Name (optional)" [formControlName]="'team_name'">
+                <!-- Emails -->
+                <div class="mt-8">
+                  <div formArrayName="players" class="space-y-4">
+                    <div *ngFor="let player of playersForm.controls; let playerIndex = index" [formGroupName]="playerIndex">
+                      <div class="flex">
+
+                        <input type="text"   placeholder="Player {{playerIndex+1}} Name"  [formControlName]="'player'" [ngClass]="{ 'is-invalid': submitted && player.errors }" />
+                        @if (submitted &&  player.errors) {
+                          <div class="invalid-feedback">
+                            @if (player['player'].errors['required']) {
+                              <div>Fullname is required</div>
+                            }
+                          </div>
+                        }
+                        <input type="email"  placeholder="Player  {{playerIndex+1}} Email"  [formControlName]="'email'" ngModel [email]="true">
+                        <input type="text"  placeholder="Player {{playerIndex+1}} Phone Number"   [formControlName]="'phone'">
+                      </div>
+                    </div>
+                  </div>
+                  <div id="AddPlayer">
+                    <button class="ml-2 font-medium text-secondary group-hover:underline"  (click)="addEmailField()">Add a Player</button>
+                  </div>
+                </div>
+
+
+                <textarea name="body" placeholder="Food Allergies / Dietary Restrictions" [formControlName]="'body'"></textarea>
                 <button (click)="submitToRegister()" class="submit">Send</button>
               </form>
             </div>
           </div>
           <div class="success hide">
-            <h4>You have successfully sent the message</h4>
+            <h4>You have successfully registered for the tournament. Please send xxx via e-transter to email&#64;test.com or contact Richard Van Loon at 613-111-1111</h4>
           </div>
           <div class="fail hide">
-            <h4>An error occurred. Submission was not sent. Please try again later</h4>
+            <h4>Registration error. Please try again later</h4>
           </div>
+
         </div>
       </div>
     </div>
   </div>
   <!-- Contact Area End -->
-  

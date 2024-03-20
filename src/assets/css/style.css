@@ -1044,8 +1044,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   z-index: -1;
 }
 .header-area.stick .logo {
-  width: 130px;
-  padding: 23px 0;
+  width: 100px;
+  padding: 0px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-area.stick .logo {
@@ -1605,7 +1605,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*-- About Content --*/
 .about-content {
   padding-left: 42px;
-  padding-top: 35px;
+  padding-top: 0px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .about-content {
@@ -1648,7 +1648,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .about-content h2 span {
   color: #ffc61c;
 }
-.about-content p {
+.about-content p, p {
   font-size: 16px;
   line-height: 26px;
   color: #727272;
@@ -4486,7 +4486,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin: 0 -1%;
 }
 .contact-form form input[type=text], .contact-form form input[type=email], .contact-form form select {
-  width: 48%;
+  width: 31%;
   margin: 0 1% 20px;
   display: block;
   float: left;
@@ -4496,6 +4496,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 24px;
   color: #444;
 }
+
+.contact-form form input[type=text].full {
+  width: 100% !important;
+}
+
+
 @media only screen and (max-width: 479px) {
   .contact-form form input[type=text], .contact-form form input[type=email] {
     width: 98%;
@@ -4524,6 +4530,66 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background-color: transparent;
 }
 .contact-form form button.submit:hover {
+  background-color: #ffc61c;
+  border-color: #ffc61c;
+  color: #ffffff;
+}
+
+/*-- Sponsor Form --*/
+.sponsor-form h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.sponsor-form form {
+  margin: 0 -1%;
+}
+.sponsor-form form input[type=text], .sponsor-form form input[type=email], .sponsor-form form select {
+  width: 48%;
+  margin: 0 1% 20px;
+  display: block;
+  float: left;
+  border: 1px solid #ddd;
+  height: 44px;
+  padding: 10px 20px 8px;
+  line-height: 24px;
+  color: #444;
+}
+
+.sponsor-form form input[type=text].full {
+  width: 100% !important;
+}
+
+
+
+@media only screen and (max-width: 479px) {
+  .sponsor-form form input[type=text], .sponsor-form form input[type=email] {
+    width: 98%;
+  }
+}
+.sponsor-form form textarea {
+  width: 98%;
+  margin: 0 1% 20px;
+  display: block;
+  float: left;
+  border: 1px solid #ddd;
+  height: 100px;
+  padding: 10px 20px 10px;
+  line-height: 24px;
+  color: #444;
+}
+.sponsor-form form button.submit {
+  margin: 0 1%;
+  display: inline-block;
+  border: 1px solid #ddd;
+  height: 44px;
+  padding: 10px 40px 8px;
+  line-height: 24px;
+  color: #444;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.sponsor-form form button.submit:hover {
   background-color: #ffc61c;
   border-color: #ffc61c;
   color: #ffffff;
@@ -4799,4 +4865,17 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .hide {
   display:none;
+}
+
+.container.sponsor {
+    ul {
+      list-style: inside disc;
+
+    }
+    ul li {
+      font-size: 16px;
+      line-height: 26px;
+      color: #727272;
+
+    }
 }
