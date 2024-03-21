@@ -50,7 +50,7 @@ $(window).on('load', function() {
   -----------------------------------*/
   $('.hero-slider').slick({
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 10000,
     infinite: true,
     prevArrow: '<button class="slick-prev"><i class=\'fa fa-angle-double-left\' style=\'font-size:48px;color:white\'></i></button>',
     nextArrow: '<button class="slick-next"><i class=\'fa fa-angle-double-right\' style=\'font-size:48px;color:white\'></i></button>',
