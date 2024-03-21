@@ -23,14 +23,16 @@ $(window).on('load', function() {
       sticky.addClass('stick');
     }
   });
+
+  console.log('heeee')
   /*--
     Mean Mobile Menu
   ------------------------*/
   $('.main-menu nav').meanmenu({
     meanScreenWidth: '767',
     meanMenuContainer: '.mobile-menu',
-    meanMenuClose: '<i class="zmdi zmdi-close"></i>',
-    meanMenuOpen: '<i class="zmdi zmdi-menu"></i>',
+    meanMenuClose: '<i class="fa fa-close"></i>',
+    meanMenuOpen: '<i class="fa fa-solid fa-bars"></i>',
     meanRevealPosition: 'right',
     meanMenuCloseSize: '30px',
     onePage: true,

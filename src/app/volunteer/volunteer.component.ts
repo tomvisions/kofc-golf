@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { ImageService } from '../image.service';
 import { Meta } from '@angular/platform-browser';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -7,7 +7,8 @@ import { VolunteerService } from './volunteer.service';
 @Component({
   selector: 'app-volunteer',
   templateUrl: './volunteer.component.html',
-  styleUrl: './volunteer.component.scss'
+  styleUrl: './volunteer.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class VolunteerComponent implements OnInit {
   volunteerCoverImage: string = "";

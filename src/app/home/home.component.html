@@ -39,7 +39,7 @@
              <!-- Hero Slider Content -->
              <div class="hero-content col-lg-10 col-12">
                  <h1><span>{{slide.title}}</span></h1>
-                 <p>{{slide.message}}</p>
+               <p [innerHTML]="slide.message"></p>
                  <p><a href="{{slide.link}}" class="{{slide.class}}">{{slide.clickMore}}</a></p>
              </div>
              </div>

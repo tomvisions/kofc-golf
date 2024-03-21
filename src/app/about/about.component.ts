@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { ImageService } from '../image.service';
 import { Meta } from '@angular/platform-browser';
 
@@ -7,7 +7,8 @@ import { Meta } from '@angular/platform-browser';
   standalone: true,
   imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class AboutComponent implements OnInit {
   aboutCoverImage: any;

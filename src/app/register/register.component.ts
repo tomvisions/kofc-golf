@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef, ViewEncapsulation} from '@angular/core';
 import { ImageService } from '../image.service';
 import {FormBuilder, FormGroup, FormArray, ValidationErrors} from '@angular/forms';
 import { RegisterService } from './register.service';
@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule, UntypedFormArray, UntypedFormBuilder,
   selector: 'app-register',
   standalone: false,
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrl: './register.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class RegisterComponent implements OnInit {
   registrationForm:FormGroup;

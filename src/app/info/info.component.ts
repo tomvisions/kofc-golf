@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ImageService } from '../image.service';
 import { Meta } from '@angular/platform-browser';
@@ -7,7 +7,8 @@ import { InfoService } from './info.service';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrl: './info.component.scss'
+  styleUrl: './info.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class InfoComponent implements OnInit {
   golfCoverImage: string = "";
