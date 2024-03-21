@@ -74,15 +74,6 @@ export class RegisterComponent implements OnInit {
       (this.registrationForm.get('players') as UntypedFormArray).push(golfFormGroup);
     });
 
-    console.log('test')
-    const boo = this.registrationForm.get('players')['controls'];
-    console.log('boo');
-    console.log(boo);
-    for (let player of boo) {
-      console.log('players')
-        console.log(player.get('player'));
-    }
-
     this._changeDetectorRef.markForCheck();
   }
   /**
@@ -120,17 +111,11 @@ export class RegisterComponent implements OnInit {
   }
 
   submitToRegister() {
-
-    console.log('woot')
     this.submitted = true;
 
-  console.log('checking')
-    console.log(this.registrationForm.invalid)
     // stop here if form is invalid
 
     const register = this.registrationForm.getRawValue();
-    console.log('the data');
-    console.log(register);
   //  register.email_type = 'register';
     let check:any = {}
     let errors:any = []

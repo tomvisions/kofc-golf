@@ -50,8 +50,8 @@ $(window).on('load', function() {
     autoplay: true,
     autoplaySpeed: 5000,
     infinite: true,
-    prevArrow: '<button class="slick-prev"><i class="zmdi zmdi-chevron-left"></i></button>',
-    nextArrow: '<button class="slick-next"><i class="zmdi zmdi-chevron-right"></i></button>',
+    prevArrow: '<button class="slick-prev"><i class=\'fa fa-angle-double-left\' style=\'font-size:48px;color:white\'></i></button>',
+    nextArrow: '<button class="slick-next"><i class=\'fa fa-angle-double-right\' style=\'font-size:48px;color:white\'></i></button>',
     fade: true,
   });
 
@@ -234,15 +234,6 @@ $(window).on('load', function() {
       scrollTarget: link.hash,
       offset: -79,
     });
-  });
-  /*--
-    Scroll Up
-  -----------------------------------*/
-  $.scrollUp({
-    easingType: 'linear',
-    scrollSpeed: 900,
-    animation: 'fade',
-    scrollText: '<i class="zmdi zmdi-chevron-up"></i>',
   });
 
   /*--

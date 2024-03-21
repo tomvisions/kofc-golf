@@ -85,10 +85,10 @@ export class SponsorComponent implements OnInit {
       console.log('the academy');
       console.log(sponsor);
      if (sponsor['result'] === 'success') {
-        document.querySelector('div.contact-form').classList.add('hide');
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {
-        document.querySelector('div.contact-form').classList.add('hide');
+        document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.fail').classList.remove('hide');
       }
     });

@@ -12,13 +12,13 @@
   <!-- Page Banner Area End -->
 
     <!-- Staff Area Start -->
-    <div id="staff-area" class="staff-area section pb-120 pt-120">
+    <div id="staff-area" class="staff-area section pb-60 pt-60">
         <div class="container sponsor pb-120 about-content">
             <div class="row">
-              <h1>Sponsorship</h1>
+              <h3>Sponsors Needed</h3>
               <p>
-              Please help make the 2024 Knights of Columbus Golf Tournament a success by becoming a Corporate Sponsor, and supporting our Charities that provide vital services to the vulnerable, disadvantaged and needy in our community.
-              For those who are unable to provide financial support, we also welcome in-kind donations of goods and/or services that will be used as prizes throughout the event, including for the Raffle Board and Silent Auction. All funds raised through the Raffle Board and Silent Auction will be donated to our charities.
+              Please help make the 2024 Knights of Columbus Golf Tournament a success by becoming a Corporate Sponsor, and supporting our charities that provide vital services to the vulnerable, disadvantaged and needy in our community.
+              For those who are unable to provide financial support, we also welcome in-kind donations of goods and/or services that will be used as prizes throughout the event, including for the Raffle Board and Silent Auction. All funds raised through the Raffle Board and Silent Auction will be donated to our <a href="/charities">charities</a>.
               </p>
               <h3>Benefits of becoming a Corporate Sponsor</h3>
               <p>All Corporate Sponsors will enjoy:</p>
@@ -80,7 +80,7 @@
               <div class="col-lg-8 col-md-7 col-12 mb-30">
                 <div class="sponsor-form">
                   <div class="form">
-                    <h4>Sponsor Form</h4>
+                    <h3>Sponsorship Form</h3>
                     <form [formGroup]="sponsorForm">
                        <select name="returningSponsor" [formControlName]="'returningSponsor'"  [(ngModel)]="returningSponsorDefaultValue">
                         <option *ngFor="let returningSponsorValue of returningSponsorValues" value="{{returningSponsorValue.value}}">
@@ -94,10 +94,9 @@
                        </select>
 
                       <input type="text" name="nameOfSponsor" placeholder="Sponsor Company Name" [formControlName]="'nameOfSponsor'">
-                      <input type="text" name="mailingAddress" placeholder="Sponsor Mailing Address" [formControlName]="'mailingAddress'">
                       <input type="text" name="contact" placeholder="Contact Name" [formControlName]="'contact'">
                       <input type="text" name="email" placeholder="Contact Email" [formControlName]="'email'">
-                      <input type="text" name="phone" class="full" placeholder="Contact Phone Number" [formControlName]="'phone'">
+                      <input type="text" name="phone" placeholder="Contact Phone Number" [formControlName]="'phone'">
                       <textarea name="specialRequeats" placeholder="Special Requests (e.g., preferred sign location)" [formControlName]="'specialRequeats'"></textarea>
                       <button (click)="submitForSponsor()" class="submit">Submit Sponsor Information</button>
                     </form>

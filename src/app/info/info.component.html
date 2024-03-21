@@ -20,7 +20,7 @@
         </div>
         <!-- About Content -->
         <div class="about-content about-content-2 col-lg-7 col-12">
-            <h2>Knights of Columbus 9544 Annual Charity Golf Tournament</h2>
+            <h3>Knights of Columbus 9544 Annual Charity Golf Tournament</h3>
             <ul>
               <li>Date: Tuesday, May 21, 2024</li>
               <li>Loch March Golf & Country Club:  1755 Old Carp Rd., Kanata, ON K2K 1X7</li>
@@ -28,7 +28,7 @@
               <li>Maximum 4 golfers per team</li>
             </ul>
 
-            <h2 class="pt-50">Agenda</h2>
+            <h3 class="pt-50">Agenda</h3>
 
             <ul>
 
@@ -36,7 +36,7 @@
             Registration starts at 11:00 a.m
         </li>
             <li>
-            Raffle Board and Silent Auction 11:00 - 12:30 a.m.
+            Raffle Board and Silent Auction 11:00 a.m. - 5:45 p.m.
         </li>
         <li>
             Shotgun Start: 1:00 p.m.
@@ -48,7 +48,7 @@
             Dinner at 6:00 pm
         </li>
         <li>
-            Prizes and Auctions at: 6:45 p.m.
+            Prizes and Silent Auctions results at: 6:45 p.m - 7:45 p.m.
         </li>
         </ul>
         </div>
@@ -59,12 +59,11 @@
           <div class="col-lg-8 col-md-7 col-12 mb-30">
             <div class="sponsor-form">
               <div class="form">
-                <h4>Contact us if you have any questions</h4>
+                <h3>Contact us if you have any questions</h3>
                 <form [formGroup]="contactForm">
                   <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
-                  <input type="text" name="email" placeholder="Email" [formControlName]="'email'">
-                  <input type="text" name="subject" placeholder="Subject" [formControlName]="'subject'">
-                  <input type="text" name="phone" placeholder="Phone" [formControlName]="'phone'">
+                  <input type="text" name="emailOrPhone" placeholder="Email Or Phone" [formControlName]="'emailOrPhone'">
+                  <input type="text" name="subject" class="full" placeholder="Subject" [formControlName]="'subject'">
                   <textarea name="message" placeholder="Comments/Questions?" [formControlName]="'message'"></textarea>
                   <button (click)="submitToContactUs()" class="submit">Send</button>
                 </form>

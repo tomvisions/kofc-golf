@@ -61,7 +61,7 @@ $('.single-result .team-name').each(function(){
         left: (aLBorder + 5),
         right: (aRBorder + 5),
     })
-}) 
+})
 /*--
 	Staff Slider
 -----------------------------------*/
@@ -193,7 +193,7 @@ galleryPopup.magnificPopup({
 	type: 'image',
 	gallery:{
 		enabled:true
-	}	
+	}
 });
 /*-- Video Gallery --*/
 var videGalleryPopup = $('.video-gallery-popup');
@@ -207,7 +207,7 @@ videGalleryPopup.magnificPopup({
 	},
 	gallery:{
 		enabled:true
-	}	
+	}
 });
 /*--
 	Smooth Scroll
@@ -221,16 +221,7 @@ $('[data-scroll]').on('click', function(e) {
         offset: -79,
 	});
 });
-/*--
-	Scroll Up
------------------------------------*/
-$.scrollUp({
-	easingType: 'linear',
-	scrollSpeed: 900,
-	animation: 'fade',
-	scrollText: '<i class="zmdi zmdi-chevron-up"></i>',
-});
-    
+
 /*--
 	Count Down Timer
 ------------------------*/
@@ -240,8 +231,8 @@ $('[data-countdown]').each(function() {
     $this.html(event.strftime('<div class="cdown days"><span class="counting">%-D</span>Days</div><div class="cdown hours"><span class="counting">%-H</span>Hours</div><div class="cdown minutes"><span class="counting">%M</span>Minutes</div>'));
     });
 });
- 
-    
-    
-})(jQuery);	
+
+
+
+})(jQuery);
 

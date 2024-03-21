@@ -24,7 +24,7 @@ export class RecipientsService {
         return [
             {
                 image: this._imageService.loadImage300x150("hope-living-facility.jpeg"),
-                name: "Shephers of Good Hope - Hope Living Facility",
+                name: "Shephards of Good Hope - Hope Living Facility",
                 content: "<p>Hope Living, is a supportive housing residence in Kanata run by Shepherds of Good Hope that provides a permanent home for seniors many of whom were formerly homeless. Most of the Hope Living residents are living with complex mental health challenges and multiple physical disabilities. The program offers a variety of on-site amenities, including a full-service dining hall, activity room, and expansive outdoor area. Hope Living provides its residents with comprehensive health and wellness support, enabling them to maintain their independence while developing life skills and integrating into the community. This year, Shepherds of Good Hope celebrates 40 years in the community and continues to provide support and care to vulnerable individuals in our community.</p>",
                 link: "https://www.sghottawa.com/hope_living/",
             },

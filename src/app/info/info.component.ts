@@ -40,8 +40,7 @@ export class InfoComponent implements OnInit {
       this.contactForm = this._formBuilder.group({
         name: '',
         subject: '',
-        email: '',
-        phone: '',
+        emailOrPhone: '',
         message: '',
       });
   }

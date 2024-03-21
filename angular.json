@@ -38,7 +38,7 @@
             "scripts": [
               "src/assets/js/vendor/modernizr-2.8.3.min.js",
               "src/assets/js/vendor/jquery-1.12.4.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",              
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/js/plugins.js",
               "src/assets/js/ajax-mail.js",
               "src/assets/js/site.js"
@@ -47,7 +47,7 @@
           "configurations": {
             "production": {
               "budgets": [
-              
+
               ],
               "outputHashing": "all",
               "fileReplacements": [
