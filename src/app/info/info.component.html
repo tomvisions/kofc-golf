@@ -62,7 +62,7 @@
                 <h3>Contact us if you have any questions</h3>
                 <form [formGroup]="contactForm">
                   <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
-                  <input type="text" name="emailOrPhone" placeholder="Email Or Phone" [formControlName]="'emailOrPhone'">
+                  <input type="text" name="emailOrPhone" placeholder="Email Or Phone Number" [formControlName]="'emailOrPhone'">
                   <input type="text" name="subject" class="full" placeholder="Subject" [formControlName]="'subject'">
                   <textarea name="message" placeholder="Comments/Questions?" [formControlName]="'message'"></textarea>
                   <button (click)="submitToContactUs()" class="submit">Send</button>
