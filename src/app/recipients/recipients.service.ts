@@ -26,13 +26,13 @@ export class RecipientsService {
                 image: this._imageService.loadImage300x150("hope-living-facility.jpeg"),
                 name: "Shepherds of Good Hope - Hope Living Facility",
                 content: "<p>Hope Living, is a supportive housing residence in Kanata run by Shepherds of Good Hope that provides a permanent home for seniors many of whom were formerly homeless. Most of the Hope Living residents are living with complex mental health challenges and multiple physical disabilities. The program offers a variety of on-site amenities, including a full-service dining hall, activity room, and expansive outdoor area. Hope Living provides its residents with comprehensive health and wellness support, enabling them to maintain their independence while developing life skills and integrating into the community. This year, Shepherds of Good Hope celebrates 40 years in the community and continues to provide support and care to vulnerable individuals in our community.</p>",
-                link: "https://www.sghottawa.com/hope_living/",
+                link: "https://www.sghottawa.com/hope-living/",
             },
             {
                 image: this._imageService.loadImage300x150("cci-ottawa-logo.png"),
                 name: "Catholic Centre for Immigrants Ottawa",
                 content: "<p>For 70 years, The Catholic Centre for Immigrants (CCI) Ottawa has been welcoming and helping newcomers feel at home in Ottawa by providing them with needed services and resources to become fully engaged members of our community. They have programs for youth, seniors, those seeking connections to a faith community, and those who need employment help. CCI Ottawa helps newcomers find housing, look for jobs, enroll their children into school and much more. They help immigrants integrate and adjust to Canadian culture and our way of life while respecting and encouraging the benefits of a diverse society.</p>",
-                link: " https://cciottawa.ca/",
+                link: "https://cciottawa.ca/",
             },
             {
                 image: this._imageService.loadImage300x150("youville-center.jpeg"),
