@@ -4497,7 +4497,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #444;
 }
 
-.contact-form form input[type=text].full {
+.contact-form form input[type=text].full, .contact-form form input[type=email].full {
   width: 100% !important;
 }
 
@@ -4556,7 +4556,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #444;
 }
 
-.sponsor-form form input[type=text].full {
+.sponsor-form form input[type=text].full, .sponsor-form form select.full {
   width: 100% !important;
 }
 

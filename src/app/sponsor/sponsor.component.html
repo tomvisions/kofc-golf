@@ -82,23 +82,52 @@
                   <div class="form">
                     <h3>Sponsorship Form</h3>
                     <form [formGroup]="sponsorForm">
-                       <select name="returningSponsor" [formControlName]="'returningSponsor'"  [(ngModel)]="returningSponsorDefaultValue">
+                      <div *ngIf="sponsorsForm.get('returningSponsor').invalid && (sponsorsForm.get('returningSponsor').dirty || sponsorsForm.get('returningSponsor').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('returningSponsor').errors['minlength']">
+                          This returning sponsor field is required.
+                        </div>
+                      </div>
+                        <select class="full" name="returningSponsor" [formControlName]="'returningSponsor'"  [(ngModel)]="returningSponsorDefaultValue">
                         <option *ngFor="let returningSponsorValue of returningSponsorValues" value="{{returningSponsorValue.value}}">
                             {{returningSponsorValue.label}}
                             </option>
                        </select>
-                       <select name="level" [formControlName]="'level'"  [(ngModel)]="sponsorLevelDefaultValue">
+                      <div *ngIf="sponsorsForm.get('level').invalid && (sponsorsForm.get('level').dirty || sponsorsForm.get('level').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('level').errors['minlength']">
+                          This sponsor level field is required.
+                        </div>
+                      </div>
+                       <select class="full" name="level" [formControlName]="'level'"  [(ngModel)]="sponsorLevelDefaultValue">
                         <option *ngFor="let sponsorLevelValue of this.sponsorLevelValues" value="{{sponsorLevelValue.value}}">
                             {{sponsorLevelValue.label}}
                             </option>
                        </select>
-
-                      <input type="text" name="nameOfSponsor" placeholder="Sponsor Company Name" [formControlName]="'nameOfSponsor'">
-                      <input type="text" name="contact" placeholder="Contact Name" [formControlName]="'contact'">
-                      <input type="text" name="email" placeholder="Contact Email" [formControlName]="'email'">
-                      <input type="text" name="phone" placeholder="Contact Phone Number" [formControlName]="'phone'">
-                      <textarea name="specialRequeats" placeholder="Special Requests (e.g., preferred sign location)" [formControlName]="'specialRequeats'"></textarea>
-                      <button (click)="submitForSponsor()" class="submit">Submit Sponsor Information</button>
+                      <div *ngIf="sponsorsForm.get('nameOfSponsor').invalid && (sponsorsForm.get('nameOfSponsor').dirty || sponsorsForm.get('nameOfSponsor').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('nameOfSponsor').errors['required']">
+                          This sponsor company name field is required.
+                        </div>
+                      </div>
+                      <input type="text" class="full"  name="nameOfSponsor" placeholder="Sponsor Company Name" [formControlName]="'nameOfSponsor'">
+                      <div *ngIf="sponsorsForm.get('contact').invalid && (sponsorsForm.get('contact').dirty || sponsorsForm.get('contact').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('contact').errors['required']">
+                          This sponsor contact field is required.
+                        </div>
+                      </div>
+                      <input type="text" class="full" name="contact" placeholder="Contact Name" [formControlName]="'contact'">
+                      <div *ngIf="sponsorsForm.get('email').invalid && (sponsorsForm.get('email').dirty || sponsorsForm.get('email').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('email').errors['required']">
+                          This sponsor email field is required.
+                        </div>
+                      </div>
+                      <input type="text" class="full"  name="email" placeholder="Contact Email" [formControlName]="'email'">
+                      <div *ngIf="sponsorsForm.get('phone').invalid && (sponsorsForm.get('phone').dirty || sponsorsForm.get('phone').touched)" class="invalid-feedback">
+                        <div *ngIf="sponsorsForm.get('phone').errors['required']">
+                          This contact phone number is required.
+                        </div>
+                      </div>
+                      <input type="text" class="full"  name="phone" placeholder="Contact Phone Number" [formControlName]="'phone'">
+                      <textarea name="specialRequests" placeholder="Special Requests (e.g., preferred sign location)" [formControlName]="'specialRequests'"></textarea>
+                      <button (click)="submitForSponsor()" class="submit" style="clear:both;float:left;">Submit Sponsor Information</button>
                     </form>
                   </div>
                 </div>
@@ -109,7 +138,7 @@
                   <h4>An error occurred. Submission was not sent. Please try again later</h4>
                 </div>
 
-                <div class="pt-50">
+                <div class="pt-50" style="clear:both">
                   <h5>Payment Methods</h5>
                   <p>Payments by Interac e-Transfer should be sent to: <strong>golfregistration&#64;kofc9544golf.ca</strong></p>
 

@@ -24,7 +24,6 @@ $(window).on('load', function() {
     }
   });
 
-  console.log('heeee')
   /*--
     Mean Mobile Menu
   ------------------------*/

@@ -1,11 +1,11 @@
 export interface Register
 {
   team_name: string
-  player?: {
+  players: {
     player: string;
     email: string;
     phone: string;
-  }[];
+  },
   body: string;
   email_type: string
 }

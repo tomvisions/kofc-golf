@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { ImageService } from '../image.service';
 import { Meta } from '@angular/platform-browser';
 import { SponsorService } from './sponsor.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sponsor',
@@ -21,18 +21,18 @@ export class SponsorComponent implements OnInit {
   returningSponsorDefaultValue : any = "null";
   returningSponsorValues: any = [
     {"label":"Returning Sponsor?", "value":"null"},
-    {"label":"Yes", "value":"yes"},
-    {"label":"No", "value":"no"},
+    {"label":"Yes", "value":"yes I am returning Sponsor"},
+    {"label":"No", "value":"no I a not a returning Sponsor"},
   ];
   sponsorLevelDefaultValue : string = "null";
   sponsorLevelValues: any = [
     {"label":"Sponsor Level?", "value":"null"},
-    {"label":"Diamond", "value":"diamond"},
-    {"label":"Platnum", "value":"platnum"},
-    {"label":"Gold", "value":"gold"},
-    {"label":"Silver", "value":"silver"},
-    {"label":"Bronze Plus", "value":"bronzeplus"},
-    {"label":"Bronze", "value":"bronze"},
+    {"label":"Diamond", "value":"diamond level"},
+    {"label":"Platnum", "value":"platnum level"},
+    {"label":"Gold", "value":"gold level"},
+    {"label":"Silver", "value":"silver level"},
+    {"label":"Bronze Plus", "value":"bronzeplus level"},
+    {"label":"Bronze", "value":"bronze level"},
 
   ];
 
@@ -63,28 +63,71 @@ export class SponsorComponent implements OnInit {
       {charset: 'UTF-8'},
     ]);
 
-        // Create the selected product form
-        this.sponsorForm = this._formBuilder.group({
-          returningSponsor: '',
-          nameOfSponsor: '',
-          contact: '',
-          email: '',
-          mailingAddress: '',
-          phone: '',
-          level: '',
-          specialRequeats: ''
-        });
+
+    this.sponsorForm =  this._formBuilder.group({
+      returningSponsor: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(26),
+        Validators.maxLength(30),
+        notNullValidator
+        ]),
+      nameOfSponsor: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20)
+      ]),
+      contact: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20)
+      ]),
+      email: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20)
+      ]),
+      phone: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20)
+      ]),
+      level:this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(20)
+      ]),
+      specialRequests: this._formBuilder.control('',[
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20)
+      ]),
+  })
+  }
+
+  get sponsorsForm() {
+    return this.sponsorForm;
   }
 
   submitForSponsor() {
     // Get the product object
+
+
+    for (const control of Object.keys(this.sponsorForm.controls)) {
+
+        this.sponsorForm.controls[control].markAsTouched();
+//        console.log(control);
+  //    console.log(this.sponsorForm.controls[control].errors)
+    }
+
+
+    //console.log('the form')
+    //console.log(this.sponsorForm)
     const contact = this.sponsorForm.getRawValue();
     contact['email_type'] = 'sponsor';
+
     // Update the product on the server
     this._sponsorService.sendContact(contact).subscribe((sponsor:any) => {
-      console.log('the academy');
-      console.log(sponsor);
-     if (sponsor['result'] === 'success') {
+     if (sponsor['success']) {
         document.querySelector('div.sponsor-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {
@@ -92,5 +135,13 @@ export class SponsorComponent implements OnInit {
         document.querySelector('div.fail').classList.remove('hide');
       }
     });
+  }
+}
+
+export function notNullValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  if (control.value !== null) {
+    return null; // valid
+  } else {
+    return { 'notNull': true }; // invalid
   }
 }
