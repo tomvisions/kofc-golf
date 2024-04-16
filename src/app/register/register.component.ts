@@ -6,6 +6,7 @@ import { Register, RegisterResponse } from './register.type';
 import {empty, Observable} from 'rxjs';
 import { FormsModule, ReactiveFormsModule, UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import {ConsoleLogger} from "@angular/compiler-cli";
+import {Meta} from "@angular/platform-browser";
 
 interface RegisterUI {
   team: string;
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
   check = {}
 
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
+  constructor(private _changeDetectorRef: ChangeDetectorRef, private _metaTagService: Meta,
                       private _imageService: ImageService, private _formBuilder: FormBuilder, private _registerService: RegisterService) {
 //    this.registrationForm = this._formBuilder.group({});
     this.registrationForm = this._formBuilder.group({});
@@ -39,6 +40,19 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this._metaTagService.addTags([
+      {
+        name: 'keywords',
+        content: 'About Knights of Columbus',
+      },
+      {name: 'robots', content: 'index, follow'},
+      {name: 'author', content: 'Tom Cruickshank'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD'},
+      {charset: 'UTF-8'},
+    ]);
+
     this._imageService.setBannerPrefix();
     this.golfCoverImage = this._imageService.loadImage1920x940('loch-march-background.jpeg');
     this._imageService.setSitePrefix();

@@ -1,1 +1,35 @@
-<p>sponsors works!</p>
+
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area section" style="background-image: url({{recipientsCoverImage}})">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-12">
+        <h2>our sponsors</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Banner Area End -->
+
+<!-- Staff Area Start -->
+<div id="staff-area" class="staff-area section pb-120 pt-60">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let charity of this.sponsors">
+        <div class="row pt-25 pb-25">
+          <!-- About Image -->
+          <div class="about-image col-lg-5 col-12">
+            <img class="img-fluid" src="{{charity.image}}" alt="">
+          </div>
+          <!-- About Content -->
+          <div class="about-content col-lg-7 col-12">
+            <h3>{{charity.name}}</h3>
+            <ul class="content" [innerHTML]="this.charity.content"></ul>
+            <a href="{{charity.link}}" target="_blank">{{charity.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { ImageService } from '../image.service';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import {Meta} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   homeArray:any;
   faCoffee = faCoffee;
 
-  constructor(private _imageService:ImageService) { }
+  constructor(private _imageService:ImageService, private _metaTagService: Meta) { }
 
 
   ngOnInit(): void {
@@ -54,5 +55,19 @@ export class HomeComponent implements OnInit {
         clickMore: "Become a volunteer",
       },
     ]
+
+
+
+    this._metaTagService.addTags([
+      {
+        name: 'keywords',
+        content: 'About Knights of Columbus',
+      },
+      {name: 'robots', content: 'index, follow'},
+      {name: 'author', content: 'Tom Cruickshank'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD'},
+      {charset: 'UTF-8'},
+    ]);
   }
 }
