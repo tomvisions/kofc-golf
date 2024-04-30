@@ -1,226 +1,250 @@
 import { Injectable } from '@angular/core';
-declare var require: any
+declare var require: any;
 const Buffer = require('buffer').Buffer;
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImageService {
   private _PARAM_LOCATION = 'site';
   private _PARAM_FRONTCLOUD = 'https://d1npdff4husvy3.cloudfront.net';
 
-  constructor() { }
+  constructor() {}
 
-  loadImage1920x940(image:string) {
+  loadImage1920x940(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 1920,
-        "height": 940,
-        "fit": "cover"
-      }
+      resize: {
+        width: 1920,
+        height: 940,
+        fit: 'cover',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage1725x442(image:string) {
+  loadImage1725x442(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 1725,
-        "height": 442,
-        "fit": "inside"
-      }
+      resize: {
+        width: 1725,
+        height: 442,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage250x150(image:string) {
+  loadImage250x150(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 150,
-        "height": 150,
-        "fit": "inside"
-      }
+      resize: {
+        width: 150,
+        height: 150,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage300x150(image:string) {
+  loadImage300x150(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 300,
-        "height": 150,
-        "fit": "inside"
-      }
+      resize: {
+        width: 300,
+        height: 150,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage48x48(image:string) {
+  loadImage150x150(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 100,
-        "height": 100,
-        "fit": "outside"
-      }
+      resize: {
+        width: 150,
+        height: 150,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-
-  loadImage270x284(image:string) {
+  loadImage300x214(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 270,
-        "height": 284,
-        "fit": "inside"
-      }
+      resize: {
+        width: 300,
+        height: 214,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage270x270(image:string) {
+  loadImage300x300(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 270,
-        "height": 270,
-        "fit": "inside"
-      }
+      resize: {
+        width: 300,
+        height: 300,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage200x200(image:string) {
+  loadImage48x48(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 200,
-        "height": 200,
-        "fit": "inside"
-      }
+      resize: {
+        width: 100,
+        height: 100,
+        fit: 'outside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage400(image:string) {
+  loadImage270x284(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 400,
-        "fit": "cover"
-      }
-    });
-
-    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
-  }
-  loadImage100(image:string) {
-    const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 100,
-        "fit": "cover"
-      }
+      resize: {
+        width: 270,
+        height: 284,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage1920x400(image:string) {
+  loadImage270x270(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 1920,
-        "height": 400,
-        "fit": "outside"
-      }
+      resize: {
+        width: 270,
+        height: 270,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-
-  loadImage450x450(image:string) {
+  loadImage200x200(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 450,
-        "height": 450,
-        "fit": "inside"
-      }
+      resize: {
+        width: 200,
+        height: 200,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage500x500(image:string) {
+  loadImage400(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 500,
-        "height": 500,
-        "fit": "cover"
-      }
+      resize: {
+        width: 400,
+        fit: 'cover',
+      },
+    });
+
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+  loadImage100(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 100,
+        fit: 'cover',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage100x100(image:string) {
+  loadImage1920x400(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 75,
-        "height":75,
-        "fit": "outside"
-      }
+      resize: {
+        width: 1920,
+        height: 400,
+        fit: 'outside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage290x450(image:string) {
+  loadImage450x450(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 290,
-        "height": 450,
-        "fit": "cover"
-      }
+      resize: {
+        width: 450,
+        height: 450,
+        fit: 'inside',
+      },
     });
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
+  loadImage500x500(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 500,
+        height: 500,
+        fit: 'cover',
+      },
+    });
 
-    loadImage1280x720(image:string) {
-      const resizedImage = this.resizeWithInS3(image, {
-        "resize": {
-          "width": 1280,
-          "height":720,
-          "fit": "outside"
-        }
-      });
-      return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
-    }
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
 
-    loadImage720x1280(image: string) {
-      const resizedImage = this.resizeWithInS3(image, {
-        "resize": {
-          "width": 720,
-          "height":1280,
-          "fit": "outside"
-        }
-      });
-      return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
-    }
+  loadImage100x100(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 75,
+        height: 75,
+        fit: 'outside',
+      },
+    });
 
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+  loadImage290x450(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 290,
+        height: 450,
+        fit: 'cover',
+      },
+    });
+
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+  loadImage1280x720(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 1280,
+        height: 720,
+        fit: 'outside',
+      },
+    });
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+  loadImage720x1280(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 720,
+        height: 1280,
+        fit: 'outside',
+      },
+    });
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
 
   /**
    * Setup Signature so that a specific bucket and key are resized with the resized serverless app that is running along with the edits
@@ -229,16 +253,15 @@ export class ImageService {
    * @param edits
    */
   public resizeWithInS3(key: string, edits: EditProperties) {
-
     if (this._PARAM_LOCATION) {
       key = `${this._PARAM_LOCATION}/${key}`;
     }
 
     const imageRequest = JSON.stringify({
-      bucket: "images-kofc-golf",
+      bucket: 'images-kofc-golf',
       key: key,
-      edits: edits
-    })
+      edits: edits,
+    });
 
     return `${Buffer.from(imageRequest).toString('base64')}`;
   }
@@ -263,9 +286,9 @@ export class ImageService {
 }
 
 export interface EditProperties {
-  "resize": {
-    width?: number,
-    height?: number,
-    fit?: string
-  }
+  resize: {
+    width?: number;
+    height?: number;
+    fit?: string;
+  };
 }

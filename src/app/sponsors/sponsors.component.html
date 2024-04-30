@@ -1,6 +1,9 @@
-
 <!-- Page Banner Area Start -->
-<div id="page-banner-area" class="page-banner-area section" style="background-image: url({{recipientsCoverImage}})">
+<div
+  id="page-banner-area"
+  class="page-banner-area section"
+  style="background-image: url({{ recipientsCoverImage }})"
+>
   <div class="container">
     <div class="row">
       <div class="page-banner-title text-center col-12">
@@ -15,21 +18,142 @@
 <div id="staff-area" class="staff-area section pb-120 pt-60">
   <div class="container">
     <div class="row">
-      <div *ngFor="let charity of this.sponsors">
-        <div class="row pt-25 pb-25">
-          <!-- About Image -->
-          <div class="about-image col-lg-5 col-12">
-            <img class="img-fluid" src="{{charity.image}}" alt="">
-          </div>
-          <!-- About Content -->
-          <div class="about-content col-lg-7 col-12">
-            <h3>{{charity.name}}</h3>
-            <ul class="content" [innerHTML]="this.charity.content"></ul>
-            <a href="{{charity.link}}" target="_blank">{{charity.name}}</a>
+
+
+<!--
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ diamondImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-lg-6 col-12 text-center align-middle">
+        <h1>Diamond Sponsor</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ diamondImage }}" alt="" />
+      </div>
+
+      <div class="col-lg-12 col-12">
+        <div *ngFor="let sponsor of this.sponsorArray['diamond']">
+          <div class="row pt-25 pb-25">
+
+            <div class="about-image col-lg-12 col-12">
+              <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+-->
 
+
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ platinumImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-6  text-center align-items-center">
+        <h1 style="margin-top:20%">Platinum Sponsors</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ platinumImage }}" alt="" />
+      </div>
+
+      <div class="col-lg-12 col-12">
+        <div *ngFor="let sponsor of this.sponsorArray['platinum']">
+          <div class="row pt-25 pb-25">
+            <!-- About Image -->
+            <div class="about-image col-lg-4 col-12">
+              <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ goldImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-lg-6 col-12 text-center align-middle">
+        <h1>Gold Sponsors</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ goldImage }}" alt="" />
+      </div>
+
+      <div class="col-lg-12 col-12">
+        <div *ngFor="let sponsor of this.sponsorArray['gold']">
+          <div class="row pt-25 pb-25">
+            <!-- About Image -->
+            <div class="about-image col-lg-3 col-12">
+              <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ silverImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-lg-6 col-12 text-center align-middle">
+        <h1>Silver Sponsors</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ silverImage }}" alt="" />
+      </div>
+
+      <div class="col-lg-12 col-12">
+        <div *ngFor="let sponsor of this.sponsorArray['silver']">
+          <div class="row pt-25 pb-25">
+            <!-- About Image -->
+            <div class="about-image col-lg-3 col-12">
+              <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ bronzePlusImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-lg-6 col-12 text-center align-middle">
+        <h1>Bronze Plus Sponsors</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ bronzePlusImage }}" alt="" />
+      </div>
+
+      <div class="col-lg-12 col-12">
+        <div *ngFor="let sponsor of this.sponsorArray['bronzePlus']">
+          <div class="row pt-25 pb-25">
+          =
+            <div class="about-image col-lg-3 col-12">
+              <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+-->
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ bronzeImage }}" alt="" />
+      </div>
+
+      <div class="about-image col-lg-6 col-12 text-center align-middle">
+        <h1>Bronze Sponsors</h1>
+      </div>
+      <div class="about-image col-lg-3 col-12">
+        <img class="img-fluid" src="{{ bronzeImage }}" alt="" />
+      </div>
+
+
+      <div class="col-lg-12 col-12">
+        <div class="about-image col-lg-3 col-12" *ngFor="let sponsor of this.sponsorArray['bronze']" style="float:left">
+          <div class="pt-25 pb-25">
+            <img class="img-fluid" src="{{ sponsor['image'] }}" alt="" />
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
