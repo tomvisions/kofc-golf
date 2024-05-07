@@ -67,6 +67,55 @@ export class SponsorsService {
         content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
         link: 'https://www.sbstarr.com/',
       },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('bioped-sponsor.jpg'),
+        name: 'Bioped Footcare & Orthotics',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: 'https://www.sbstarr.com/',
+      },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('pharmasave-sponsor.jpeg'),
+        name: 'Pharmasave',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('hulse-sponsor.jpeg'),
+        name: 'Hulse, Playfair & McGarry',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('logo-campbellchiro-jul20-v2.png'),
+        name: 'Campbell Chiropractic Center',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('sponsor-sim-orthodontics.png'),
+        name: 'Campbell Chiropractic Center',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      },
+      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('silverwood-sponsor.jpeg'),
+        name: 'Sponsor Sim Orthodontics',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      },
+      /*      {
+        level: 'bronze',
+        image: this._imageService.loadImage300x150('Reliance-Holmes-logo-4C.png'),
+        name: 'Reliance Holmes',
+        content: '<p>Since 1976, House of Canvas has been recognized as an innovator in awning design, engineering, and fabrication.</p>',
+        link: '',
+      }, */
     ];
   }
 }
