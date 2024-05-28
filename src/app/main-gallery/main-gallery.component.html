@@ -1,0 +1,30 @@
+<div id="page-banner-area" class="page-banner-area section ddd" style="background-image: url({{golfCoverImage}})">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-12">
+        <h2>tournament registration</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Banner Area End -->
+
+<div id="contact-area" class="contact-area section pb-60 pt-60">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="rows grid mix-wrapper" id="mix-wrapper">
+        <ng-container *ngIf="(images$ | async) as  images">
+            <ng-container *ngIf="images.length > 0;">
+              <div *ngFor="let image of images;let index = index" class="row" >
+
+                <a class href="/{{image.GalleryId}}" class="mix-target {{image.TagsId | displayTag }} col-md-6 col-sm-12 col-lg-4 grid-item" data-order="1">
+                  <img  src="{{image.key}}" width="350" alt="{{image.id}}" class="img-fluid"><span class="gallery-writing">{{image.name}}</span></a>
+            </div>
+            </ng-container>
+          </ng-container>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

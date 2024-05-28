@@ -6,8 +6,12 @@ import { AboutComponent } from './about/about.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { SponsorComponent } from './sponsor/sponsor.component';
 import { RegisterComponent } from './register/register.component';
+import {MainGalleryComponent} from "./main-gallery/main-gallery.component";
+import {MainGalleryResolver} from "./main-gallery/main-gallery.resolver";
 import { InfoComponent } from './info/info.component';
 import { RecipientsComponent } from './recipients/recipients.component';
+import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
+import {ViewGalleryResolver} from "./view-gallery/view-gallery.resolver";
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryResolver } from './gallery/gallery.resolver';
 
@@ -44,6 +48,22 @@ const routes: Routes = [
       path: 'register',
       component: RegisterComponent,
     },
+  {
+    path: 'media',
+    component: MainGalleryComponent,
+    resolve: {
+      images: MainGalleryResolver,
+    }
+  },
+  {
+    path: 'media/:id',
+    component: ViewGalleryComponent,
+    resolve: {
+      images: ViewGalleryResolver,
+    }
+
+  }
+
 ];
 
 @NgModule({
