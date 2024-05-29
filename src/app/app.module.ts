@@ -33,6 +33,7 @@ import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
   ],
   imports: [
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     NgbModule,
     AppRoutingModule,

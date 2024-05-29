@@ -5,3 +5,16 @@
 .ngx-gallery-thumbnail {
     background-position: top !important;
 }
+
+@import "~node_modules/lightgallery/css/lightgallery.css";
+@import "~node_modules/lightgallery/css/lg-zoom.css";
+@import "~node_modules/lightgallery/css/lg-thumbnail.css";
+
+.lg-outer {
+  z-index:99999;
+  background: #000000;
+}
+
+#mix-wrapper .row {
+  display: inline-block;
+}

@@ -24,7 +24,7 @@ export class ViewGalleryService
   // @ Public methods
   // -----------------------------------------------------------------------------------------------------
 
-  
+
 
    /**
    * Getter for product
@@ -47,7 +47,7 @@ export class ViewGalleryService
             }).pipe(
             map((getgallery) => {
               this._gallery.next(getgallery.galleries);
-    
+
               return gallery;
             }),
           ))
@@ -61,7 +61,7 @@ export class ViewGalleryService
 
     return this.getGallery$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/media/id/${id}/image/1/100/key/asc`,
+      switchMap(theContactUs => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/media/id/${id}/image/1/200/key/asc`,
         { headers: {
             'Content-Type': 'application/json'
           }}).pipe(

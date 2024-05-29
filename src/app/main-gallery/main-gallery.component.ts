@@ -5,6 +5,7 @@ import { ImageService } from '../image.service';
 import {Observable, Subject, takeUntil} from 'rxjs';
 import { GalleryPagination } from './main-gallery.type';
 import { Gallery, Image } from './main-gallery.type';
+import {mixitup} from "mixitup"
 
 export let mixitupIstance;
 @Component({
@@ -15,7 +16,7 @@ export let mixitupIstance;
 })
 
 
-export class MainGalleryComponent implements OnInit, AfterViewInit, OnDestroy{
+export class MainGalleryComponent implements OnInit, AfterViewInit, OnDestroy {
   private _unsubscribeAll: Subject<any> = new Subject<any>();
   galleries$: Observable<Gallery[]>;
   images$: Observable<Image[]>;
@@ -44,7 +45,25 @@ export class MainGalleryComponent implements OnInit, AfterViewInit, OnDestroy{
   }
 
   ngAfterViewChecked() {
+    const mixer = mixitup('.mix-wrapper', {
+      load: {
+        sort: 'order:asc'
+      },
+      animation: {
+        effects: 'fade rotate2(-180)',
+        duration: 700,
+      },
+      classNames: {
+        block: 'programs',
+        elementFilter: 'filter-btn',
+        elementSort: 'sort-btn',
+      },
+      selectors: {
+        target: '.mix-target'
+      }
+    });
 
+    mixer.filter('golf-tournament')
   }
 
 }

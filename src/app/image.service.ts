@@ -5,9 +5,10 @@ const Buffer = require('buffer').Buffer;
 @Injectable({
   providedIn: 'root',
 })
+
 export class ImageService {
   private _PARAM_LOCATION = 'site';
-  private _PARAM_FRONTCLOUD = 'https://d1npdff4husvy3.cloudfront.net';
+  private _PARAM_FRONTCLOUD = 'https://images.kofc9544-charitytournament.golf';
 
   constructor() {}
 
@@ -119,18 +120,6 @@ export class ImageService {
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage270x270(image: string) {
-    const resizedImage = this.resizeWithInS3(image, {
-      resize: {
-        width: 270,
-        height: 270,
-        fit: 'inside',
-      },
-    });
-
-    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
-  }
-
   loadImage200x200(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
       resize: {
@@ -199,6 +188,19 @@ export class ImageService {
 
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
+
+  loadImage270x270(image: string) {
+    const resizedImage = this.resizeWithInS3(image, {
+      resize: {
+        width: 270,
+        height: 270,
+        fit: 'inside',
+      },
+    });
+
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
 
   loadImage100x100(image: string) {
     const resizedImage = this.resizeWithInS3(image, {
@@ -269,6 +271,8 @@ export class ImageService {
   public setSitePrefix(prefix = true) {
     if (prefix) {
       this._PARAM_LOCATION = 'site';
+    } else {
+                  this._PARAM_LOCATION = '';
     }
   }
 
