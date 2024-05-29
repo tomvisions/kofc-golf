@@ -67,7 +67,7 @@ export class ViewGalleryService
           }}).pipe(
         map((getGallery) => {
           this._getGallery.next(getGallery.data);
-
+          console.log(getGallery.data);
           return getGallery.data
         }),
       ))

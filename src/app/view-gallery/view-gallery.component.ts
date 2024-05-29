@@ -22,6 +22,7 @@ export class ViewGalleryComponent implements  OnInit {
   settings;
   onBeforeSlide;
   golfCoverImage: string = '';
+  title;
 
   constructor(
     private _viewGalleryService: ViewGalleryService,
@@ -49,7 +50,8 @@ export class ViewGalleryComponent implements  OnInit {
         this.galleries = galleries
         this._imageService.setSitePrefix(false);
         this.galleryImages = [];
-        for (let image of this.galleries) {
+        this.title = this.galleries[0].gallery.name
+    /*    for (let image of this.galleries) {
 
           if (image.orientation === 1) {
       //    this.galleryImages.push({ big: this._imageService.loadImage1280x720(image['key']),  small: this._imageService.loadImage100x100(image['key']) })
@@ -59,8 +61,8 @@ export class ViewGalleryComponent implements  OnInit {
 
             this.galleryImages.push({ big: this._imageService.loadImage1280x720(image['key']),  small: this._imageService.loadImage270x270(image['key']) })
           }
-        }
-        console.log(this.galleryImages);
+        } */
+ //       console.log(this.galleryImages);
       })
   }
 }

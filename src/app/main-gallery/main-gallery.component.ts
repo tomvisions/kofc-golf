@@ -5,7 +5,7 @@ import { ImageService } from '../image.service';
 import {Observable, Subject, takeUntil} from 'rxjs';
 import { GalleryPagination } from './main-gallery.type';
 import { Gallery, Image } from './main-gallery.type';
-import {mixitup} from "mixitup"
+import mixitup from "mixitup"
 
 export let mixitupIstance;
 @Component({
@@ -63,7 +63,7 @@ export class MainGalleryComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    mixer.filter('golf-tournament')
+    mixer.filter('.golf-tournament')
   }
 
 }

@@ -17,6 +17,7 @@ import {LightgalleryModule} from "lightgallery/angular";
 import {DisplayTagPipe} from "./display-tag.pipe";
 import {MainGalleryComponent} from "./main-gallery/main-gallery.component";
 import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
+import {FormatImagePipe} from "./format-image.pipe";
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
     FormsModule,
     HttpClientModule,
     LightgalleryModule,
-    DisplayTagPipe
+    DisplayTagPipe,
+    FormatImagePipe
   ],
   providers: [],
   bootstrap: [AppComponent]
