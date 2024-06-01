@@ -1,7 +1,7 @@
 import { NgModule,  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,37 +20,30 @@ import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
 import {FormatImagePipe} from "./format-image.pipe";
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    InfoComponent,
-    SponsorComponent,
-    RegisterComponent,
-    VolunteerComponent,
-    RecipientsComponent,
-    MainGalleryComponent,
-    ViewGalleryComponent
-  ],
-  imports: [
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    LightgalleryModule,
-    DisplayTagPipe,
-    FormatImagePipe
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        InfoComponent,
+        SponsorComponent,
+        RegisterComponent,
+        VolunteerComponent,
+        RecipientsComponent,
+        MainGalleryComponent,
+        ViewGalleryComponent
+    ],
+    bootstrap: [AppComponent], imports: [ReactiveFormsModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        NgbModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        LightgalleryModule,
+        DisplayTagPipe,
+        FormatImagePipe], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
