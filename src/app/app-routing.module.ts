@@ -49,14 +49,14 @@ const routes: Routes = [
       component: RegisterComponent,
     },
   {
-    path: 'media',
+    path: 'photo',
     component: MainGalleryComponent,
     resolve: {
       images: MainGalleryResolver,
     }
   },
   {
-    path: 'media/:id',
+    path: 'photo/:id',
     component: ViewGalleryComponent,
     resolve: {
       images: ViewGalleryResolver,

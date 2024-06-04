@@ -8,7 +8,7 @@ const Buffer = require('buffer').Buffer;
 
 export class ImageService {
   private _PARAM_LOCATION = 'site';
-  private _PARAM_FRONTCLOUD = 'https://images.kofc9544-charitytournament.golf';
+  private _PARAM_FRONTCLOUD = 'https://d2gifgqgzdur7l.cloudfront.net';
 
   constructor() {}
 
@@ -273,7 +273,7 @@ export class ImageService {
     }
 
     const imageRequest = JSON.stringify({
-      bucket: 'images-kofc-golf',
+      bucket: 'images.kofc9544.ca',
       key: key,
       edits: edits,
     });

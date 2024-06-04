@@ -18,7 +18,7 @@
         <ng-container *ngIf="(images$ | async) as  images">
             <ng-container *ngIf="images.length > 0;">
               <div *ngFor="let image of images;let index = index" class="row">
-                <a href="/media/{{image.GalleryId}}" class="mix-target {{image.TagsId | displayTag }} col-md-6 col-sm-12 col-lg-4 grid-item" data-order="1">
+                <a href="/photo/{{image.GalleryId}}" class="mix-target {{image.TagsId | displayTag }} col-md-6 col-sm-12 col-lg-4 grid-item" data-order="1">
                   <img  src="{{image.key}}" width="350" alt="{{image.id}}" class="img-fluid"><span class="gallery-writing">{{image.name}}</span></a>
             </div>
             </ng-container>

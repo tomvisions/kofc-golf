@@ -1,4 +1,4 @@
-import { NgModule,  } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -18,6 +18,8 @@ import {DisplayTagPipe} from "./display-tag.pipe";
 import {MainGalleryComponent} from "./main-gallery/main-gallery.component";
 import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
 import {FormatImagePipe} from "./format-image.pipe";
+import {RouterOutlet} from "@angular/router";
+
 
 
 @NgModule({ declarations: [
@@ -32,15 +34,15 @@ import {FormatImagePipe} from "./format-image.pipe";
         ViewGalleryComponent
     ],
     bootstrap: [AppComponent], imports: [ReactiveFormsModule,
+        RouterOutlet,
         BrowserAnimationsModule,
         BrowserModule,
         NgbModule,
         AppRoutingModule,
         FontAwesomeModule,
-        HttpClientModule,
+
         ReactiveFormsModule,
         BrowserModule,
-        HttpClientModule,
         AppRoutingModule,
         FormsModule,
         LightgalleryModule,
