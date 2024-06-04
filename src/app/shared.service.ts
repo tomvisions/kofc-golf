@@ -12,9 +12,9 @@ export class SharedService {
       this._apiLocation = 'http://localhost:9000'
     //  this._apiLocation = 'https://api-stage.tomvisions.com';
     } else if (environment.node_env === 'stage') {
-        this._apiLocation = 'https://d2gifgqgzdur7l.cloudfront.net'
+        this._apiLocation = 'https://d10fm4zdopeh6z.cloudfront.net'
     } else {
-      this._apiLocation = 'https://d2gifgqgzdur7l.cloudfront.net';
+      this._apiLocation = 'https://d3p3yf2zhdhwpi.cloudfront.net';
     }
   }
 
