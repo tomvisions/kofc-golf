@@ -14,6 +14,7 @@ import {ViewGalleryComponent} from "./view-gallery/view-gallery.component";
 import {ViewGalleryResolver} from "./view-gallery/view-gallery.resolver";
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryResolver } from './gallery/gallery.resolver';
+import {CalendarComponent} from "./calendar/calendar.component";
 
 const routes: Routes = [
     {
@@ -25,10 +26,28 @@ const routes: Routes = [
       component: AboutComponent,
     },
     {
-      path: 'info',
+      path: 'contact',
       component: InfoComponent,
     },
     {
+      path: 'calender',
+      component: CalendarComponent,
+    },
+  {
+    path: 'photo',
+    component: MainGalleryComponent,
+    resolve: {
+      images: MainGalleryResolver,
+    }
+  },
+  {
+    path: 'photo/:id',
+    component: ViewGalleryComponent,
+    resolve: {
+      images: ViewGalleryResolver,
+    }
+  },
+  {
       path: 'volunteer',
       component: VolunteerComponent,
     },

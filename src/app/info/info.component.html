@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="page-banner-title text-center col-12">
-          <h2>Tournament Info</h2>
+          <h2>contact us</h2>
         </div>
       </div>
     </div>
@@ -20,39 +20,8 @@
         </div>
         <!-- About Content -->
         <div class="about-content about-content-2 col-lg-7 col-12">
-            <h3>Knights of Columbus 9544 Annual Charity Golf Tournament</h3>
-            <ul>
-              <li>Date: Tuesday, May 21, 2024</li>
-              <li>Loch March Golf & Country Club:  1755 Old Carp Rd., Kanata, ON K2K 1X7</li>
-              <li>Registratiion: $175 per golfer (includes green fees, golf cart, and buffet supper)</li>
-              <li>Maximum 4 golfers per team</li>
-            </ul>
-
-            <h3 class="pt-50">Agenda</h3>
-
-            <ul>
-
-            <li>
-            Registration starts at 11:00 a.m
-        </li>
-            <li>
-            Raffle Board and Silent Auction 11:00 a.m. - 5:45 p.m.
-        </li>
-        <li>
-            Shotgun Start: 1:00 p.m.
-        </li>
-        <li>
-            Play ends at: 5:30 p.m.
-        </li>
-        <li>
-            Dinner at 6:00 pm
-        </li>
-        <li>
-            Prizes and Silent Auctions results at: 6:45 p.m - 7:45 p.m.
-        </li>
-        </ul>
+            <h3>What to Contact the 9544 Council?</h3>
         </div>
-      </div>
     </div>
     <div class="container pt-20">
         <div class="row">
@@ -61,8 +30,18 @@
               <div class="form">
                 <h3>Contact us if you have any questions</h3>
                 <form [formGroup]="contactForm">
-                  <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
-                  <input type="text" name="emailOrPhone" placeholder="Email Or Phone Number" [formControlName]="'emailOrPhone'">
+                  <select class="full" name="to" [formControlName]="'to'" required>
+
+                    <option [ngValue]="null" [disabled]="true">Select your option</option>
+                    <option value="gk@kofc9544.ca">Grand Knight</option>
+                    <option value="dggk@kofc9544.ca">Deputy Grand Knight </option>
+                    <option value="finance-sec@kofc9544.ca">Financial Secretary</option>
+                    <option value="webmaster@kofc9544.ca">Web Master</option>
+                  </select>
+
+
+                  <input type="text" name="name" class="full" placeholder="Name" [formControlName]="'name'">
+                  <input type="text" name="emailOrPhone" class="full" placeholder="Email Or Phone Number" [formControlName]="'emailOrPhone'">
                   <input type="text" name="subject" class="full" placeholder="Subject" [formControlName]="'subject'">
                   <textarea name="message" placeholder="Comments/Questions?" [formControlName]="'message'"></textarea>
                   <button (click)="submitToContactUs()" class="submit">Send</button>

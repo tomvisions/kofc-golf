@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       { // who we are
         imageDesktop:  this._imageService.loadImage1920x940('loch-march-background.jpeg'),
         imageMobile: this._imageService.loadImage270x270('loch-march-background.jpeg'),
-        title: "Knights of Columbus 9544 Annual Charity Golf Tournament",
+        title: "Knights of Columbus 9544 Council",
         message: "<strong>Date:</strong> Tuesday, May 21, 2024<br>Location: Loch March Golf & Country Club - 1755 Old Carp Rd. Kanata, ON K2K 1X7<br>Cost: $175 per golfer (includes green fees, golf cart, and buffet supper)<br>Maximum 4 golfers per team",
         link: "/register",
         clickMore: "Register here"
