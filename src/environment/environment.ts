@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  node_env: "dev"
+  node_env: "dev",
+  api_location:'http://localhost:9000',
+
 };
 
 /*
